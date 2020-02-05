@@ -1,1 +1,1 @@
-# kth-is1200
+# KTH-IS1200 Computer Hardware Engineering Course Repository
