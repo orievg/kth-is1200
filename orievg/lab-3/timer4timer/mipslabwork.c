@@ -59,7 +59,7 @@ void labwork( void ){
         mytime = (mytime & 0xf0ff) | (sw<<8);
       }
       //button 2 001,011,101,111
-      if (btn ==1||btn ==3||btn ==5||btn ==7) {// 100,101,110,111
+      if (btn ==1||btn ==3||btn ==5||btn ==7) {
         mytime = (mytime & 0xff0f) | (sw<<4);
       }
       if(IFS(0) & 0x100){/*Test time-out event flag*/
