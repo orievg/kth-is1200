@@ -9,7 +9,7 @@
   #
 .global delay
 .global time2string
-
+.global enable_interrupt
 .macro	PUSH reg
 	addi	$sp,$sp,-4
 	sw	\reg,0($sp)
@@ -197,5 +197,8 @@ DING:
   sb    $t0, 5($a0)
   jr    $ra
   nop
-
+enable_interrupt:
+    ei
+    jr $ra
+    nop
 
