@@ -3,16 +3,17 @@
    This file written 2015 by F Lundevall
    Updated 2017-04-21 by F Lundevall
 
-   This file should be changed by YOU! So you must
-   add comment(s) here with your name(s) and date(s):
+  Dalvie
+  time4timer Assn 2/lab 2
 
-   This file modified 2017-04-31 by Ture Teknolog
+  This file modified 2017-04-31 by Ture Teknolog
 
    For copyright and licensing, see file COPYING */
 
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
+
 int mytime = 0x5957;
 int timeoutcount = 0;
 char textstring[] = "text, more text, and even more text!";
@@ -24,58 +25,60 @@ void user_isr( void )
 }
 
 /* Lab-specific initialization goes here */
-void labinit( void ){
-  volatile int* E= (volatile int*) 0xbf886100;
-
-  volatile int* pE= (volatile int*) 0xbf886110;
-  *pE = 0x0;
-  *pE= *pE+1;
-  *E = * E & 0xff00; //init port E
-  TRISD = TRISD & 0x0fe0; // init port D
-
-  T2CONCLR =0x0; //disable timer b4 configuring
+void labinit( void )
+{
+	volatile int* led = (volatile int*) 0xbf886100; // TRISE
+  *led &= ~ 0xff; // set 8 lsb of TRISE to 0 (output)
 
 
-  T2CONSET = 0x70; //prescale 256 //0111
-  TMR2 = 0x0; //set timer to 0
-  PR2 = (8000000 / 256); // AKA 80 mil /256/10
-  T2CONSET = 0x8000; //timer on
+  TRISD &= 0xfe0; // set bits 7-11 as 1 (intputs)
 
+
+  T2CON = 0x70; // sets the timer to off and prescale to 1:256
+  PR2 = (80000000 / 256) / 10; // timeout every 100ms
+  TMR2 = 0; // reset the timer
+  T2CONSET = 0x8000; // start the timer
   return;
 }
 
 /* This function is called repetitively from the main program */
-void labwork( void ){
+void labwork( void )
+{
+  volatile int* out = (volatile int*) 0xbf886110; // PORTE
+  *out = 0;
+   // iterate the output (led) by 1.
+   int val = getsw();
+   int btns = getbtns();
 
-  int btn = getbtns();
-  int sw = getsw();
+   while(1){
+     btns = getbtns();
+     val = getsw();
+      // when btn 2 is pressed. 001,011,101,111 update  first second
+      if (btns == 1 || btns == 3 || btns == 5 || btns == 7) {
+        mytime = ((mytime & 0xff0f) | (val << 4));
+      }
+      // when btn 3 is pressed 010, 110, 011, 111 update last minute
+      if (btns == 2 || btns == 6 || btns == 3 || btns == 7) {
+        mytime = ((mytime & 0xf0ff) | (val << 8));
+      }
+      // when btn 4 is pressed 100, 101, 110, 111
+      if (btns == 4 || btns == 5 || btns == 6 || btns == 7) {
+        mytime = ((mytime & 0x0fff) | (val << 12));
+      }
 
-    //button 4 // 100,101,110,111
-      if (btn ==4||btn ==5||btn ==6||btn ==7) {
-        mytime = (mytime & 0x0fff) | (sw<<12);
-      }
-      //button 3 010,011,110,111
-      if (btn ==2||btn ==3||btn ==6||btn ==7) {
-        mytime = (mytime & 0xf0ff) | (sw<<8);
-      }
-      //button 2 001,011,101,111
-      if (btn ==1||btn ==3||btn ==5||btn ==7) {
-        mytime = (mytime & 0xff0f) | (sw<<4);
-      }
-      if(IFS(0) & 0x100){/*Test time-out event flag*/
+      if (IFS(0) & 0x100) { //check for timeout IF.
         timeoutcount++;
-        IFSCLR(0) = 0x100;
-
-      }
-      if (timeoutcount==10) {
+        IFSCLR(0) = 0x100; // clear the timeout IF.
+    }
+      if (timeoutcount == 10){
+        timeoutcount = 0;
         time2string( textstring, mytime );
-        display_string( 3, textstring );
-        display_update();
-        tick( &mytime );
-        display_image(96, icon);
-        timeoutcount=0;
+      	display_string( 3, textstring );
+      	display_update();
+      	tick( &mytime );
+      	//*out = *out + 1;
+      	display_image(96, icon);
+        *out = *out + 1;
       }
-
-
-
-}
+      }
+    }
