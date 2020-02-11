@@ -31,7 +31,11 @@ void labinit( void )
   *led &= ~ 0xff; // set 8 lsb of TRISE to 0 (output)
 
 
+
   TRISDSET = 0x7f0; // set bits 7-11 as 1 (intputs)
+
+  TRISD &= 0xfe0; // set bits 7-11 as 1 (intputs)
+
 
 
   T2CON = 0x70; // sets the timer to off and prescale to 1:256
