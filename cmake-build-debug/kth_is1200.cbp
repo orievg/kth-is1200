@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="kth_is1200"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="kth_is1200">
+				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/kth_is1200.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/."/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/lab 3"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/project"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 kth_is1200"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="kth_is1200/fast">
+				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/kth_is1200.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/."/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/lab 3"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/project"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 kth_is1200/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ass5">
+				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/ass5.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/."/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/lab 3"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/project"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 ass5"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ass5/fast">
+				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/ass5.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/."/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/lab 3"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer"/>
+					<Add directory="C:/Users/Orievg/Documents/GitHub/kth-is1200/project"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 ass5/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int/mipslab.h">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int/mipslabdata.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int/mipslabfunc.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int/mipslabmain.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int/mipslabwork.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int/stubs.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4int/time4io.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io/mipslab.h">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io/mipslabdata.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io/mipslabfunc.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io/mipslabmain.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io/mipslabwork.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io/stubs.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/time4io/time4io.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer/mipslab.h">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer/mipslabdata.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer/mipslabfunc.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer/mipslabmain.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer/mipslabwork.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer/stubs.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer/time4io.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-4/ass5.c">
+			<Option target="kth_is1200"/>
+			<Option target="ass5"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/project/main.c">
+			<Option target="kth_is1200"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
