@@ -18,7 +18,7 @@
 
 uint8_t game[128*4] = {0};
 
- uint8_t  icon[] = {
+ uint8_t  icon[] = { // border. other functions alter this.
 	255, 255, 255, 255, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3,
@@ -83,11 +83,6 @@ uint8_t game[128*4] = {0};
   192, 192, 192, 192, 192, 192, 192, 192,
   192, 192, 192, 192, 192, 192, 192, 192,
   192, 192, 192, 192, 192, 192, 255, 255,
-};
-
-uint8_t square_6x6[] =
-{
-  63, 63, 63, 63, 63, 63, 0, 0,
 };
 
 void delay(int cyc) {
@@ -193,19 +188,21 @@ void renderScreen(uint8_t arr[]) {
 }
 
 void drawLine( int x, int y, int width){
+  // draws a line of length width. Helper function for drawBlocks.
   int offset = 0;
 
   if (x > 8)
   {
-    offset = 10 / 8;
+    offset = x / 8;
   }
   icon[128*offset + y] |= width << (x - offset*8);
 
   renderScreen(icon);
 }
 
-void drawSquare(int x, int y){
-  // x, y is the top left corner. Fixed width of 6
+void drawBlock(int x, int y){
+  // x, y is the top left corner. Fixed width of 2 pixels
+  // helper function for shapes
   int i;
 
   for (i = 0; i < 2; i++){
@@ -213,15 +210,59 @@ void drawSquare(int x, int y){
   }
 }
 
+void drawO(int x, int y){
+  // shape O consists of 4 blocks. (4 x 4)
+  // coordinates are the top right corner of shape.
+  int X = x + 2;
+  int Y = y + 2;
+
+  drawBlock(x, y);
+  drawBlock(x, Y);
+  drawBlock(X, y);
+  drawBlock(X, Y);
+
+}
+
+void drawI(int x, int y){
+  // draws the I shape horizontally.
+  // coordinates are the top right corner of shape.
+  int i;
+
+  for (i = x; i < (x + 8); i = i + 2){
+    drawBlock(i, y);
+  }
+}
+
+void drawJ(int x, int y){
+  // draws the J shape horizontally
+  int X = x + 2;
+  int i;
+  drawBlock(x, y);
+
+  for (i = y; i < (y + 6); i = i + 2){
+    drawBlock(X, i);
+  }
+}
+
+void drawL(int x, int y){
+  // draws the L shape horizontally
+  int X = x + 2;
+  int i;
+  drawBlock(X, y);
+
+  for(i = y; i < (y + 6); i = i + 2){
+    drawBlock(x, i);
+  }
+}
 int main() {
   int i;
 	spi_init();
 	display_wakeup();
 
-  //for (i = 4; i < 120; i++)
-  //{
-	drawSquare( 10 , 10);
-  //}
 
+	drawO( 10 , 10);
+  drawI(10, 16);
+  drawJ(10, 20);
+  drawL(10, 28);
 	return 0;
 }
