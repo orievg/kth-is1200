@@ -1,4 +1,6 @@
-C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Orievg\Documents\GitHub\kth-is1200
+C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Orievg\Documents\GitHub\kth-is1200
 -- Configuring done
+CMake Error: Cannot determine link language for target "figures".
+CMake Error: CMake can not determine linker language for target: figures
 -- Generating done
--- Build files have been written to: C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug
+CMake Generate step failed.  Build files cannot be regenerated correctly.

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="kth_is1200" targetName="ass5" />
+      <config projectName="kth_is1200" targetName="main" />
+      <config projectName="kth_is1200" targetName="figures" />
       <config projectName="kth_is1200" targetName="kth_is1200" />
+      <config projectName="kth_is1200" targetName="test" />
+      <config projectName="kth_is1200" targetName="ass5" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -25,6 +28,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="0-Debug-kth_is1200" />
+  </component>
   <component name="ProjectId" id="1XcmFny9znYeZS3vtaNi9RN0423" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -39,14 +45,20 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Orievg\Documents\GitHub\kth-is1200\project" />
       <recent name="C:\Users\Orievg\Documents\GitHub\kth-is1200\project\.old" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Orievg\Documents\GitHub\kth-is1200\project" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.ass5">
+  <component name="RunManager" selected="CMake Application.test">
     <configuration name="ass5" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kth_is1200" TARGET_NAME="ass5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kth_is1200" RUN_TARGET_NAME="ass5">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="figures" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kth_is1200" TARGET_NAME="figures" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kth_is1200" RUN_TARGET_NAME="figures">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -56,9 +68,22 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kth_is1200" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kth_is1200" RUN_TARGET_NAME="main">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kth_is1200" TARGET_NAME="test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kth_is1200" RUN_TARGET_NAME="test">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="CMake Application.ass5" />
+      <item itemvalue="CMake Application.figures" />
       <item itemvalue="CMake Application.kth_is1200" />
+      <item itemvalue="CMake Application.main" />
+      <item itemvalue="CMake Application.test" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -74,12 +99,27 @@
       <workItem from="1581353656883" duration="356000" />
       <workItem from="1581354014692" duration="2043000" />
       <workItem from="1581966641868" duration="253000" />
-      <workItem from="1582113844681" duration="2886000" />
+      <workItem from="1582113844681" duration="5172000" />
+      <workItem from="1582674315682" duration="10573000" />
+      <workItem from="1582715485957" duration="6403000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="2644" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581966763195">
@@ -90,6 +130,38 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2694" y="296" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581353986778" />
+    <state width="1340" height="287" key="GridCell.Tab.0.bottom" timestamp="1582720815531">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582720815531" />
+    <state width="1340" height="287" key="GridCell.Tab.0.center" timestamp="1582720815531">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="287" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582720815531" />
+    <state width="1340" height="287" key="GridCell.Tab.0.left" timestamp="1582720815531">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="287" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582720815531" />
+    <state width="1340" height="287" key="GridCell.Tab.0.right" timestamp="1582720815531">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="287" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582720815531" />
+    <state width="1340" height="328" key="GridCell.Tab.1.bottom" timestamp="1582682908873">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582682908873" />
+    <state width="1340" height="328" key="GridCell.Tab.1.center" timestamp="1582682908873">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582682908873" />
+    <state width="1340" height="328" key="GridCell.Tab.1.left" timestamp="1582682908873">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582682908873" />
+    <state width="1340" height="328" key="GridCell.Tab.1.right" timestamp="1582682908873">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582682908873" />
     <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1581354011521">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -102,9 +174,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2415" y="183" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581353924001" />
-    <state x="2610" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1582119559287">
+    <state x="2610" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1582715529766">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2610" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582715529766" />
     <state x="2610" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582119559287" />
     <state x="2314" y="140" width="1200" height="800" key="dock-window-1" timestamp="1581966894698">
       <screen x="1920" y="0" width="1920" height="1040" />

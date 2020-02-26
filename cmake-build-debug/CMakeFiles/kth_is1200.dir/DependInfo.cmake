@@ -23,7 +23,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer/stubs.c" "C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/stubs.c.obj"
   "C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer/time4io.c" "C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/time4io.c.obj"
   "C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-4/ass5.c" "C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.obj"
-  "C:/Users/Orievg/Documents/GitHub/kth-is1200/project/main.c" "C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/kth_is1200.dir/project/main.c.obj"
+  "C:/Users/Orievg/Documents/GitHub/kth-is1200/project/.old/main.c" "C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/kth_is1200.dir/project/.old/main.c.obj"
+  "C:/Users/Orievg/Documents/GitHub/kth-is1200/project/test.c" "C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/kth_is1200.dir/project/test.c.obj"
+  "C:/Users/Orievg/Documents/GitHub/kth-is1200/project/test/test.c" "C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/kth_is1200.dir/project/test/test.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

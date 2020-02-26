@@ -1,4 +1,7 @@
 C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/main.dir
 C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/kth_is1200.dir
 C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/test.dir
 C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/ass5.dir
+C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/CMakeFiles/figures.dir

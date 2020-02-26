@@ -38,10 +38,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe -E remove -f
+RM = C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\Orievg\Documents\GitHub\kth-is1200\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
+	C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -110,6 +110,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
 # Target rules for targets named kth_is1200
 
 # Build rule for target.
@@ -123,6 +136,19 @@ kth_is1200/fast:
 .PHONY : kth_is1200/fast
 
 #=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+#=============================================================================
 # Target rules for targets named ass5
 
 # Build rule for target.
@@ -134,6 +160,19 @@ ass5: cmake_check_build_system
 ass5/fast:
 	$(MAKE) -f CMakeFiles\ass5.dir\build.make CMakeFiles/ass5.dir/build
 .PHONY : ass5/fast
+
+#=============================================================================
+# Target rules for targets named figures
+
+# Build rule for target.
+figures: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 figures
+.PHONY : figures
+
+# fast build rule for target.
+figures/fast:
+	$(MAKE) -f CMakeFiles\figures.dir\build.make CMakeFiles/figures.dir/build
+.PHONY : figures/fast
 
 orievg/lab-3/time4int/mipslabdata.obj: orievg/lab-3/time4int/mipslabdata.c.obj
 
@@ -651,13 +690,40 @@ orievg/lab-4/ass5.c.s:
 	$(MAKE) -f CMakeFiles\ass5.dir\build.make CMakeFiles/ass5.dir/orievg/lab-4/ass5.c.s
 .PHONY : orievg/lab-4/ass5.c.s
 
+project/.old/main.obj: project/.old/main.c.obj
+
+.PHONY : project/.old/main.obj
+
+# target to build an object file
+project/.old/main.c.obj:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/.old/main.c.obj
+.PHONY : project/.old/main.c.obj
+
+project/.old/main.i: project/.old/main.c.i
+
+.PHONY : project/.old/main.i
+
+# target to preprocess a source file
+project/.old/main.c.i:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/.old/main.c.i
+.PHONY : project/.old/main.c.i
+
+project/.old/main.s: project/.old/main.c.s
+
+.PHONY : project/.old/main.s
+
+# target to generate assembly for a file
+project/.old/main.c.s:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/.old/main.c.s
+.PHONY : project/.old/main.c.s
+
 project/main.obj: project/main.c.obj
 
 .PHONY : project/main.obj
 
 # target to build an object file
 project/main.c.obj:
-	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/main.c.obj
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/project/main.c.obj
 .PHONY : project/main.c.obj
 
 project/main.i: project/main.c.i
@@ -666,7 +732,7 @@ project/main.i: project/main.c.i
 
 # target to preprocess a source file
 project/main.c.i:
-	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/main.c.i
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/project/main.c.i
 .PHONY : project/main.c.i
 
 project/main.s: project/main.c.s
@@ -675,8 +741,68 @@ project/main.s: project/main.c.s
 
 # target to generate assembly for a file
 project/main.c.s:
-	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/main.c.s
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/project/main.c.s
 .PHONY : project/main.c.s
+
+project/test.obj: project/test.c.obj
+
+.PHONY : project/test.obj
+
+# target to build an object file
+project/test.c.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/project/test.c.obj
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test.c.obj
+.PHONY : project/test.c.obj
+
+project/test.i: project/test.c.i
+
+.PHONY : project/test.i
+
+# target to preprocess a source file
+project/test.c.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/project/test.c.i
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test.c.i
+.PHONY : project/test.c.i
+
+project/test.s: project/test.c.s
+
+.PHONY : project/test.s
+
+# target to generate assembly for a file
+project/test.c.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/project/test.c.s
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test.c.s
+.PHONY : project/test.c.s
+
+project/test/test.obj: project/test/test.c.obj
+
+.PHONY : project/test/test.obj
+
+# target to build an object file
+project/test/test.c.obj:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test/test.c.obj
+	$(MAKE) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/project/test/test.c.obj
+.PHONY : project/test/test.c.obj
+
+project/test/test.i: project/test/test.c.i
+
+.PHONY : project/test/test.i
+
+# target to preprocess a source file
+project/test/test.c.i:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test/test.c.i
+	$(MAKE) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/project/test/test.c.i
+.PHONY : project/test/test.c.i
+
+project/test/test.s: project/test/test.c.s
+
+.PHONY : project/test/test.s
+
+# target to generate assembly for a file
+project/test/test.c.s:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test/test.c.s
+	$(MAKE) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/project/test/test.c.s
+.PHONY : project/test/test.c.s
 
 # Help Target
 help:
@@ -685,9 +811,12 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... main
 	@echo ... kth_is1200
 	@echo ... rebuild_cache
+	@echo ... test
 	@echo ... ass5
+	@echo ... figures
 	@echo ... orievg/lab-3/time4int/mipslabdata.obj
 	@echo ... orievg/lab-3/time4int/mipslabdata.i
 	@echo ... orievg/lab-3/time4int/mipslabdata.s
@@ -745,9 +874,18 @@ help:
 	@echo ... orievg/lab-4/ass5.obj
 	@echo ... orievg/lab-4/ass5.i
 	@echo ... orievg/lab-4/ass5.s
+	@echo ... project/.old/main.obj
+	@echo ... project/.old/main.i
+	@echo ... project/.old/main.s
 	@echo ... project/main.obj
 	@echo ... project/main.i
 	@echo ... project/main.s
+	@echo ... project/test.obj
+	@echo ... project/test.i
+	@echo ... project/test.s
+	@echo ... project/test/test.obj
+	@echo ... project/test/test.i
+	@echo ... project/test/test.s
 .PHONY : help
 
 

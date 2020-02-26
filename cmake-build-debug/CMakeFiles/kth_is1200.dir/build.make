@@ -33,10 +33,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe -E remove -f
+RM = C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -308,19 +308,19 @@ CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/time4io.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/time4io.c.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Orievg\Documents\GitHub\kth-is1200\orievg\lab-3\timer4timer\time4io.c -o CMakeFiles\kth_is1200.dir\orievg\lab-3\timer4timer\time4io.c.s
 
-CMakeFiles/kth_is1200.dir/project/main.c.obj: CMakeFiles/kth_is1200.dir/flags.make
-CMakeFiles/kth_is1200.dir/project/main.c.obj: CMakeFiles/kth_is1200.dir/includes_C.rsp
-CMakeFiles/kth_is1200.dir/project/main.c.obj: ../project/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Orievg\Documents\GitHub\kth-is1200\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/kth_is1200.dir/project/main.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\kth_is1200.dir\project\main.c.obj   -c C:\Users\Orievg\Documents\GitHub\kth-is1200\project\main.c
+CMakeFiles/kth_is1200.dir/project/.old/main.c.obj: CMakeFiles/kth_is1200.dir/flags.make
+CMakeFiles/kth_is1200.dir/project/.old/main.c.obj: CMakeFiles/kth_is1200.dir/includes_C.rsp
+CMakeFiles/kth_is1200.dir/project/.old/main.c.obj: ../project/.old/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Orievg\Documents\GitHub\kth-is1200\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/kth_is1200.dir/project/.old/main.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\kth_is1200.dir\project\.old\main.c.obj   -c C:\Users\Orievg\Documents\GitHub\kth-is1200\project\.old\main.c
 
-CMakeFiles/kth_is1200.dir/project/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kth_is1200.dir/project/main.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Orievg\Documents\GitHub\kth-is1200\project\main.c > CMakeFiles\kth_is1200.dir\project\main.c.i
+CMakeFiles/kth_is1200.dir/project/.old/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kth_is1200.dir/project/.old/main.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Orievg\Documents\GitHub\kth-is1200\project\.old\main.c > CMakeFiles\kth_is1200.dir\project\.old\main.c.i
 
-CMakeFiles/kth_is1200.dir/project/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kth_is1200.dir/project/main.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Orievg\Documents\GitHub\kth-is1200\project\main.c -o CMakeFiles\kth_is1200.dir\project\main.c.s
+CMakeFiles/kth_is1200.dir/project/.old/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kth_is1200.dir/project/.old/main.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Orievg\Documents\GitHub\kth-is1200\project\.old\main.c -o CMakeFiles\kth_is1200.dir\project\.old\main.c.s
 
 CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.obj: CMakeFiles/kth_is1200.dir/flags.make
 CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.obj: CMakeFiles/kth_is1200.dir/includes_C.rsp
@@ -335,6 +335,34 @@ CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.i: cmake_force
 CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Orievg\Documents\GitHub\kth-is1200\orievg\lab-4\ass5.c -o CMakeFiles\kth_is1200.dir\orievg\lab-4\ass5.c.s
+
+CMakeFiles/kth_is1200.dir/project/test.c.obj: CMakeFiles/kth_is1200.dir/flags.make
+CMakeFiles/kth_is1200.dir/project/test.c.obj: CMakeFiles/kth_is1200.dir/includes_C.rsp
+CMakeFiles/kth_is1200.dir/project/test.c.obj: ../project/test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Orievg\Documents\GitHub\kth-is1200\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/kth_is1200.dir/project/test.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\kth_is1200.dir\project\test.c.obj   -c C:\Users\Orievg\Documents\GitHub\kth-is1200\project\test.c
+
+CMakeFiles/kth_is1200.dir/project/test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kth_is1200.dir/project/test.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Orievg\Documents\GitHub\kth-is1200\project\test.c > CMakeFiles\kth_is1200.dir\project\test.c.i
+
+CMakeFiles/kth_is1200.dir/project/test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kth_is1200.dir/project/test.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Orievg\Documents\GitHub\kth-is1200\project\test.c -o CMakeFiles\kth_is1200.dir\project\test.c.s
+
+CMakeFiles/kth_is1200.dir/project/test/test.c.obj: CMakeFiles/kth_is1200.dir/flags.make
+CMakeFiles/kth_is1200.dir/project/test/test.c.obj: CMakeFiles/kth_is1200.dir/includes_C.rsp
+CMakeFiles/kth_is1200.dir/project/test/test.c.obj: ../project/test/test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Orievg\Documents\GitHub\kth-is1200\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/kth_is1200.dir/project/test/test.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\kth_is1200.dir\project\test\test.c.obj   -c C:\Users\Orievg\Documents\GitHub\kth-is1200\project\test\test.c
+
+CMakeFiles/kth_is1200.dir/project/test/test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kth_is1200.dir/project/test/test.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Orievg\Documents\GitHub\kth-is1200\project\test\test.c > CMakeFiles\kth_is1200.dir\project\test\test.c.i
+
+CMakeFiles/kth_is1200.dir/project/test/test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kth_is1200.dir/project/test/test.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Orievg\Documents\GitHub\kth-is1200\project\test\test.c -o CMakeFiles\kth_is1200.dir\project\test\test.c.s
 
 # Object files for target kth_is1200
 kth_is1200_OBJECTS = \
@@ -356,8 +384,10 @@ kth_is1200_OBJECTS = \
 "CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/mipslabwork.c.obj" \
 "CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/stubs.c.obj" \
 "CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/time4io.c.obj" \
-"CMakeFiles/kth_is1200.dir/project/main.c.obj" \
-"CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.obj"
+"CMakeFiles/kth_is1200.dir/project/.old/main.c.obj" \
+"CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.obj" \
+"CMakeFiles/kth_is1200.dir/project/test.c.obj" \
+"CMakeFiles/kth_is1200.dir/project/test/test.c.obj"
 
 # External object files for target kth_is1200
 kth_is1200_EXTERNAL_OBJECTS =
@@ -380,13 +410,15 @@ kth_is1200.exe: CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/mipslabmain.c
 kth_is1200.exe: CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/mipslabwork.c.obj
 kth_is1200.exe: CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/stubs.c.obj
 kth_is1200.exe: CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/time4io.c.obj
-kth_is1200.exe: CMakeFiles/kth_is1200.dir/project/main.c.obj
+kth_is1200.exe: CMakeFiles/kth_is1200.dir/project/.old/main.c.obj
 kth_is1200.exe: CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.obj
+kth_is1200.exe: CMakeFiles/kth_is1200.dir/project/test.c.obj
+kth_is1200.exe: CMakeFiles/kth_is1200.dir/project/test/test.c.obj
 kth_is1200.exe: CMakeFiles/kth_is1200.dir/build.make
 kth_is1200.exe: CMakeFiles/kth_is1200.dir/linklibs.rsp
 kth_is1200.exe: CMakeFiles/kth_is1200.dir/objects1.rsp
 kth_is1200.exe: CMakeFiles/kth_is1200.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Orievg\Documents\GitHub\kth-is1200\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking C executable kth_is1200.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Orievg\Documents\GitHub\kth-is1200\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking C executable kth_is1200.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\kth_is1200.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
