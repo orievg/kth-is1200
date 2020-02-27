@@ -34,10 +34,11 @@ add_executable(kth_is1200
         orievg/lab-3/timer4timer/mipslabwork.c
         orievg/lab-3/timer4timer/stubs.c
         orievg/lab-3/timer4timer/time4io.c
-        project/.old/main.c orievg/lab-4/ass5.c project/test.c project/test/figures.h project/test/test.c)
+        project/.old/main.c orievg/lab-4/ass5.c project/test.c project/test/figures.h project/test/test.c project/test/test.new.c)
 
 add_executable(ass5 orievg/lab-4/ass5.c)
-add_executable(main project/main.c project/test.c)
+add_executable(main project/main.c project/test.c project/test.new.cpp)
 add_executable(test project/test/test.c)
 
 add_executable(figures project/test/figures.h)
+add_executable(test.new project/test/test.new.c)

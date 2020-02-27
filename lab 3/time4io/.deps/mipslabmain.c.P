@@ -1,6 +1,0 @@
-mipslabmain.c.o: mipslabmain.c /pkg/mcb32tools/2.2/include/stdint.h \
- /afs/kth.se/pkg/mcb32tools/.sys/amd64_linux26/2.2/lib/gcc/mipsel-mcb32-elf/4.9.2/include/stdint-gcc.h \
- /pkg/mcb32tools/2.2/include/pic32mx.h mipslab.h
-mipslabmain.c /pkg/mcb32tools/2.2/include/stdint.h :
- /afs/kth.se/pkg/mcb32tools/.sys/amd64_linux26/2.2/lib/gcc/mipsel-mcb32-elf/4.9.2/include/stdint-gcc.h :
- /pkg/mcb32tools/2.2/include/pic32mx.h mipslab.h :

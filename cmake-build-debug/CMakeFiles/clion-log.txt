@@ -1,6 +1,34 @@
 C:\Users\Orievg\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Orievg\Documents\GitHub\kth-is1200
 -- Configuring done
-CMake Error: Cannot determine link language for target "figures".
-CMake Error: CMake can not determine linker language for target: figures
--- Generating done
+CMake Error at CMakeLists.txt:40 (add_executable):
+  Cannot find source file:
+
+    project/test.c
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:15 (add_executable):
+  Cannot find source file:
+
+    orievg/lab-4/ass5.c
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:40 (add_executable):
+  No SOURCES given to target: main
+
+
+CMake Error at CMakeLists.txt:15 (add_executable):
+  No SOURCES given to target: kth_is1200
+
+
+CMake Error at CMakeLists.txt:39 (add_executable):
+  No SOURCES given to target: ass5
+
+
 CMake Generate step failed.  Build files cannot be regenerated correctly.
+Cannot read C:\Users\Orievg\Documents\GitHub\kth-is1200\cmake-build-debug\CMakeFiles\ass5.dir\DependInfo.cmake

@@ -30,11 +30,7 @@ void labinit( void )
 	volatile int* led = (volatile int*) 0xbf886100;
   *led &= ~ 0xff; // set 8 lsb of PORTE to 0 (output)
 
-
-  TRISDSET = 0x7f0; // set bits 5-11 as 1 (intputs)
-
   TRISD &= 0xfe0; // set bits 7-11 as 1 (intputs)
-
   return;
 }
 
