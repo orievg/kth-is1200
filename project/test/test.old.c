@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <time.h>
+// #include <time.h>
 #define FIELD_SIZE 210
 #define SMALL_PIECE_SIZE 9
 //
@@ -63,7 +63,8 @@ void rotate(bool r, char piece, int * state){
 
 }
 void showField(){
-    for (int i=0;i<FIELD_SIZE;i++){
+  int i;
+    for ( i=0;i<FIELD_SIZE;i++){
         printf("%i",field[i]);
         if ((i+1)%10==0){
             printf("\n");
@@ -73,9 +74,10 @@ void showField(){
 }
 void clrPiece(char pieceName){}
 void spawnPiece(char pieceName, int state){
+  int i;
     int position = x_+y_*10;
     if (pieceName =='t'){
-        for (int i=0;i<SMALL_PIECE_SIZE;i++){
+        for ( i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]=t_[state][i];
 
             if ((i+1)%3==0){
@@ -86,10 +88,11 @@ void spawnPiece(char pieceName, int state){
     }
 }
 void moveDown(char pieceName, int state){
+    int i;
     int position = x_+y_*10;
     if (pieceName =='t'){
         //clearing the row above
-        for (int i=0;i<3;i++){
+        for ( i=0;i<3;i++){
             field[position-10+i]=0;
         }
         spawnPiece(pieceName,state);
@@ -97,17 +100,19 @@ void moveDown(char pieceName, int state){
 }
 //fuction to move sideways r=1 - right
 void moveSide(char pieceName, int state, int r){
+  int i;
     int position = x_+y_*10;
     if (pieceName =='t'&&state==0){
         //clearing the row above
-        for (int i=0;i<3;i++){
+        for ( i=0;i<3;i++){
             field[position-10+i]=0;
         }
         spawnPiece(pieceName,state);
     }
 }
-void tick(int sec)
-{
+/*
+ void tick(int sec)
+ {
     // Converting time into milli_seconds
     int ms = 1000 * sec;
 
@@ -116,10 +121,12 @@ void tick(int sec)
 
     // looping till required time is not achieved
     while (clock() < start_time + ms);
-}
+} */
+
 void displayPiece(char pieceName, int state){
+  int i;
     if (pieceName == 'i'){
-        for(int i=0;i<16;i++){
+        for( i=0;i<16;i++){
             printf("%i", i_[state][i]);
             if ((i+1)%4==0){
                 printf("\n");
@@ -127,7 +134,7 @@ void displayPiece(char pieceName, int state){
         }
     }
     if (pieceName == 'j'){
-        for(int i=0;i<SMALL_PIECE_SIZE;i++){
+        for( i=0;i<SMALL_PIECE_SIZE;i++){
             printf("%i", j_[state][i]);
             if ((i+1)%3==0){
                 printf("\n");
@@ -135,7 +142,7 @@ void displayPiece(char pieceName, int state){
         }
     }
     if (pieceName == 'l'){
-        for(int i=0;i<SMALL_PIECE_SIZE;i++){
+        for( i=0;i<SMALL_PIECE_SIZE;i++){
             printf("%i", l_[state][i]);
             if ((i+1)%3==0){
                 printf("\n");
@@ -143,7 +150,7 @@ void displayPiece(char pieceName, int state){
         }
     }
     if (pieceName == 's'){
-        for(int i=0;i<SMALL_PIECE_SIZE;i++){
+        for( i=0;i<SMALL_PIECE_SIZE;i++){
             printf("%i", s_[state][i]);
             if ((i+1)%3==0){
                 printf("\n");
@@ -151,7 +158,7 @@ void displayPiece(char pieceName, int state){
         }
     }
     if (pieceName == 't'){
-        for(int i=0;i<SMALL_PIECE_SIZE;i++){
+        for( i=0;i<SMALL_PIECE_SIZE;i++){
             printf("%i", t_[state][i]);
             if ((i+1)%3==0){
                 printf("\n");
@@ -159,7 +166,7 @@ void displayPiece(char pieceName, int state){
         }
     }
     if (pieceName == 'z'){
-        for(int i=0;i<SMALL_PIECE_SIZE;i++){
+        for( i=0;i<SMALL_PIECE_SIZE;i++){
             printf("%i", z_[state][i]);
             if ((i+1)%3==0){
                 printf("\n");
@@ -168,11 +175,12 @@ void displayPiece(char pieceName, int state){
     }
 
 }
-
+/*
 void main(){
-    time_t ti;
-    /* Intializes random number generator */
-    srand((unsigned) time(&ti));
+
+     time_t ti;
+    // Intializes random number generator
+    /srand((unsigned) time(&ti));
     int shape = rand() % 7;
     char piece;
     if (shape ==0){piece='o';}
@@ -200,6 +208,7 @@ void main(){
     y_++;
     moveDown('t',0);
     showField();
+    */
 //    while (quit!=1){
 //        tick(1);
 //        printf("Tick\n");
@@ -224,7 +233,4 @@ void main(){
 //    displayPiece(piece, pieceState);
 //    printf("Rotating right\n");
 //    rotate(1,piece,stateP);
-//    displayPiece(piece, pieceState);
-
-
-}
+//    displayPiece(piece, pieceState);}
