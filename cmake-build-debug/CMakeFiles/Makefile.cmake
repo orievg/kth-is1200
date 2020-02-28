@@ -51,6 +51,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/main.dir/DependInfo.cmake"
   "CMakeFiles/kth_is1200.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
-  "CMakeFiles/ass5.dir/DependInfo.cmake"
-  "CMakeFiles/figures.dir/DependInfo.cmake"
+  "CMakeFiles/test.new.dir/DependInfo.cmake"
+  "CMakeFiles/random.dir/DependInfo.cmake"
   )

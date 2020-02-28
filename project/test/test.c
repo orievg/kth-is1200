@@ -6,22 +6,10 @@
 #define SMALL_PIECE_SIZE 9
 #define LARGE_PIECE_SIZE 16
 //
-
-
-
 //
 // Created by Orievg on 2020-02-26.
 //
-//piece arguments
-int rot = 0;//rotation of an object
-int position = 0;
-int x_ = 1;
-int y_ = 15; //-1 form desired row
-int drop = 0;
-int pieceState = 1;
-char pieceName = 'i';
-int pieceDirection = 0;
-//
+
 int done = 0;
 //define field size
 int field[FIELD_SIZE]={0};
@@ -34,10 +22,56 @@ int l_[][SMALL_PIECE_SIZE]={{0,0,1,1,1,1,0,0,0},{0,1,0,0,1,0,0,1,1},{0,0,0,1,1,1
 int s_[][SMALL_PIECE_SIZE]={{0,1,1,1,1,0,0,0,0},{0,1,0,0,1,1,0,0,1},{0,0,0,0,1,1,1,1,0},{1,0,0,1,1,0,0,1,0}};
 int t_[][SMALL_PIECE_SIZE]={{0,1,0,1,1,1,0,0,0},{0,1,0,0,1,1,0,1,0},{0,0,0,1,1,1,0,1,0},{0,1,0,1,1,0,0,1,0}};
 int z_[][SMALL_PIECE_SIZE]={{1,1,0,0,1,1,0,0,0},{0,0,1,0,1,1,0,1,0},{0,0,0,1,1,0,0,1,1},{0,1,0,1,1,0,1,0,0}};
+
 //
 
 //r==1 - clockwise r==2 counterclockwise
+char randomPiece(){
+    int *r;
+    r = (int*)malloc(sizeof(int));
+    int rnd = ((int)r%7);
+    switch(rnd){
+        case 0:
+            return 'o';
+            break;
+        case 1:
+            return 'i';
+            break;
+        case 2:
+            return 'j';
+            break;
+        case 3:
+            return 'l';
+            break;
+        case 4:
+            return 's';
+            break;
+        case 5:
+            return 't';
+            break;
+        case 6:
+            return 'z';
+            break;
+    }
 
+}
+int randomState(){
+    int  x= -1;
+    int * xP = &x;
+    while ((*xP)==-1){
+        int *r;
+        r = (int*)malloc(sizeof(int));
+        (*xP) = ((int)r%5-1);
+    }
+    return(*xP);
+}
+int randomOffset(){
+
+    int *r;
+    r = (int*)malloc(sizeof(int));
+    int rnd = ((int)r%7);
+    return rnd;
+}
 void showField(){
     for (int i=10;i<FIELD_SIZE;i++){
         printf("%i",field[i]);
@@ -47,12 +81,23 @@ void showField(){
     }
     printf("\n");
 }
+//piece arguments
+int rot = 0;//rotation of an object
+int position = 0;
+int x_;
+int y_ = 0; //-1 form desired row
+int drop = 0;
+int pieceState;
+char pieceName;
+int pieceDirection = 0;
+char pieceOnHold;
+
+//
 void clrPiece(char pieceName, int state){
     position = x_+y_*10;
     if (pieceName =='i'){
         for (int i=0;i<LARGE_PIECE_SIZE;i++){
             field[position]-=i_[state][i];
-
             if ((i+1)%4==0){
                 position+=6;
             }
@@ -62,7 +107,6 @@ void clrPiece(char pieceName, int state){
     if (pieceName =='o'){
         for (int i=0;i<LARGE_PIECE_SIZE;i++){
             field[position]-=o_[state][i];
-
             if ((i+1)%4==0){
                 position+=6;
             }
@@ -72,7 +116,6 @@ void clrPiece(char pieceName, int state){
     if (pieceName =='j'){
         for (int i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]-=j_[state][i];
-
             if ((i+1)%3==0){
                 position+=7;
             }
@@ -82,7 +125,6 @@ void clrPiece(char pieceName, int state){
     if (pieceName =='l'){
         for (int i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]-=l_[state][i];
-
             if ((i+1)%3==0){
                 position+=7;
             }
@@ -92,7 +134,6 @@ void clrPiece(char pieceName, int state){
     if (pieceName =='s'){
         for (int i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]-=s_[state][i];
-
             if ((i+1)%3==0){
                 position+=7;
             }
@@ -102,7 +143,6 @@ void clrPiece(char pieceName, int state){
     if (pieceName =='t'){
         for (int i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]-=t_[state][i];
-
             if ((i+1)%3==0){
                 position+=7;
             }
@@ -112,7 +152,6 @@ void clrPiece(char pieceName, int state){
     if (pieceName =='z'){
         for (int i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]-=z_[state][i];
-
             if ((i+1)%3==0){
                 position+=7;
             }
@@ -125,7 +164,6 @@ void spawnPiece(char pieceName, int state){
     if (pieceName =='i'){
         for (int i=0;i<LARGE_PIECE_SIZE;i++){
             field[position]+=i_[state][i];
-
             if ((i+1)%4==0){
                 position+=6;
             }
@@ -135,7 +173,6 @@ void spawnPiece(char pieceName, int state){
     if (pieceName =='o'){
         for (int i=0;i<LARGE_PIECE_SIZE;i++){
             field[position]+=o_[state][i];
-
             if ((i+1)%4==0){
                 position+=6;
             }
@@ -145,7 +182,6 @@ void spawnPiece(char pieceName, int state){
     if (pieceName =='j'){
         for (int i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]+=j_[state][i];
-
             if ((i+1)%3==0){
                 position+=7;
             }
@@ -155,7 +191,6 @@ void spawnPiece(char pieceName, int state){
     if (pieceName =='l'){
         for (int i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]+=l_[state][i];
-
             if ((i+1)%3==0){
                 position+=7;
             }
@@ -165,7 +200,6 @@ void spawnPiece(char pieceName, int state){
     if (pieceName =='s'){
         for (int i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]+=s_[state][i];
-
             if ((i+1)%3==0){
                 position+=7;
             }
@@ -175,7 +209,6 @@ void spawnPiece(char pieceName, int state){
     if (pieceName =='t'){
         for (int i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]+=t_[state][i];
-
             if ((i+1)%3==0){
                 position+=7;
             }
@@ -185,7 +218,6 @@ void spawnPiece(char pieceName, int state){
     if (pieceName =='z'){
         for (int i=0;i<SMALL_PIECE_SIZE;i++){
             field[position]+=z_[state][i];
-
             if ((i+1)%3==0){
                 position+=7;
             }
@@ -201,7 +233,6 @@ void rotate(int r, char piece, int * state){
         }
         else
             (*state)=0;
-
     }
     if (r==2)
         if ((*state)>0){
@@ -213,13 +244,6 @@ void rotate(int r, char piece, int * state){
 }
 void Done(){
     done = 0;
-    x_=5;
-    y_=12;
-    pieceState=0;
-    pieceDirection = 0;
-    pieceName='z';
-    spawnPiece(pieceName,pieceState);
-
 }
 void DoneDone(){
     x_=7;
@@ -797,10 +821,10 @@ void boundCheck(char pieceName, int state,int * direction){
     }
     else if ((*direction)==0){
         if (pieceName == 'j'||pieceName == 'l'||pieceName == 's'||pieceName == 't'||pieceName == 'z'){
-            if (state==0 &&y_==20){
+            if (state==0 &&y_==19){
                 done = 1;
             }
-            else if (y_==19){
+            else if (y_==18 && (state==1||state==2||state==3)){
                 done = 1;
             }
         }
@@ -826,6 +850,7 @@ void boundCheck(char pieceName, int state,int * direction){
 void move(char pieceName, int state,int * direction){
     position = x_+y_*10;
     clrPiece(pieceName, state);
+
     if ((*direction) == 0){
 
         y_++;
@@ -871,6 +896,18 @@ void rowCheck(){
         sum=0;
     }
 }
+//s=1 put on hold, s=2 release
+void holdPiece(char pieceName, int s) {
+    char temp;
+    if (s == 1) {
+        pieceOnHold = pieceName;
+    }
+    else if (s == 2) {
+        temp =pieceOnHold;
+        pieceOnHold = pieceName;
+        pieceName =
+    }
+}
 void tick(float sec)
 {
     // Converting time into milli_seconds
@@ -882,40 +919,30 @@ void tick(float sec)
     // looping till required time is not achieved
     while (clock() < start_time + ms);
 }
-int quit = 11;
+int quit = 50;
 void main(){
-    time_t ti;
-    /* Intializes random number generator */
-    srand((unsigned) time(&ti));
-//    int shape = rand() % 7;
-//    char piece;
-//    if (shape ==0){piece='o';}
-//    if (shape ==1){piece='i';}
-//    if (shape ==2){piece='j';}
-//    if (shape ==3){piece='l';}
-//    if (shape ==4){piece='s';}
-//    if (shape ==5){piece='t';}
-//    if (shape ==6){piece='z';}
-//
+    int hold =0;
+//  init 1 Piece arguments
+    char * nameP = &pieceName;
+    (*nameP) = randomPiece();
     int * stateP = &pieceState;
+    (*stateP) = randomState();
+    int * xP = &x_;
+    (*xP) = randomOffset();
     int * directionP = &pieceDirection;
-    // printf("asd%i",(*directionP));
-//    printf("Rotating right\n");
-//    rotate(1,piece,stateP);
-//    displayPiece(piece, pieceState);
-//    printf("\n");
+    //show empty field
     showField();
-
-
-    //int dir =2;
-    spawnPiece(pieceName,pieceState);
+    //spawn piece on field
+    spawnPiece((*nameP),(*stateP));
+    printf("Spawned piece x=%i, y=%i, piece: %c, direction: %i, state:%i\n",(*xP),y_, pieceName, (*directionP),(*stateP));
+    //show field again
     showField();
     int done1= 0;
     while (quit!=1 && done!=1){
-        tick(1);
+        tick(0.5);
         printf("Tick\n");
-        if (quit==5){
-            pieceDirection=2;
+        if (quit==30){
+            hold =1;
         }
         if (rot >0){
             rotate(rot,pieceName,stateP);
@@ -926,40 +953,31 @@ void main(){
         if (pieceDirection==0) {
             move(pieceName,pieceState, directionP);
         }
+        if (hold ==1){
+            holdPiece((*nameP),hold);
+            clrPiece((*nameP),(*stateP));
+            //you write to display here instead
+            printf("PIECE ON HOLD: %c\n",pieceOnHold);
+            done = 1;
+            hold =0;
+        }
+        else if (hold ==2){
+            holdPiece((*nameP),hold);
+            hold = 0;
+        }
         printf("x=%i, y=%i, piece: %c, direction: %i, done %i\n",x_,y_, pieceName, (*directionP), done);
         showField();
         rowCheck();
         quit--;
-
         if (done == 1){
+            //generate new piece
+            (*nameP) = randomPiece();
+            (*stateP) = randomState();
+            (*xP) = randomOffset();
+            y_=0;
+            printf("Spawned piece x=%i, y=%i, piece: %c, direction: %i, state:%i\n",(*xP),y_, pieceName, (*directionP),(*stateP));
+            spawnPiece((*nameP),(*stateP));
             Done();
         }
-//        else if (done ==1 && done1==1){
-//            printf("done1\n");
-//            DoneDone();
-//        }
     }
-//    for (int j = 0; j<4;j++){
-//        for(int i=0;i<9;i++) {
-//            printf("%i", z_[j][i]);
-//            if ((i + 1) % 3 == 0) {
-//                printf("\n");
-//            }
-//        }
-//        printf("\n");
-//    }
-//    printf("Rotating right\n");
-//    rotate(1,piece,stateP);
-//    displayPiece(piece, pieceState);
-//    printf("Rotating right\n");
-//    rotate(1,piece,stateP);
-//    displayPiece(piece, pieceState);
-//    printf("Rotating right\n");
-//    rotate(1,piece,stateP);
-//    displayPiece(piece, pieceState);
-//    printf("Rotating right\n");
-//    rotate(1,piece,stateP);
-//    displayPiece(piece, pieceState);
-
-
 }

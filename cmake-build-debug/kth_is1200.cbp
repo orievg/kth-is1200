@@ -193,8 +193,8 @@
 					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="ass5">
-				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/ass5.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="test.new">
+				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/test.new.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -213,14 +213,14 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 ass5"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 test.new"/>
 					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="ass5/fast">
-				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/ass5.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="test.new/fast">
+				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/test.new.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -239,14 +239,14 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 ass5/fast"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 test.new/fast"/>
 					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="figures">
-				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/figures.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="random">
+				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/random.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -265,14 +265,14 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 figures"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 random"/>
 					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="figures/fast">
-				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/figures.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="random/fast">
+				<Option output="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/random.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -291,7 +291,7 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 figures/fast"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 random/fast"/>
 					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-W/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Orievg/Documents/GitHub/kth-is1200/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -361,27 +361,23 @@
 		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-3/timer4timer/time4io.c">
 			<Option target="kth_is1200"/>
 		</Unit>
-		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/orievg/lab-4/ass5.c">
-			<Option target="kth_is1200"/>
-			<Option target="ass5"/>
-		</Unit>
 		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/project/.old/main.c">
 			<Option target="kth_is1200"/>
 		</Unit>
 		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/project/main.c">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/project/test.c">
-			<Option target="main"/>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/project/test/random.c">
 			<Option target="kth_is1200"/>
-		</Unit>
-		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/project/test/figures.h">
-			<Option target="kth_is1200"/>
-			<Option target="figures"/>
+			<Option target="random"/>
 		</Unit>
 		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/project/test/test.c">
 			<Option target="kth_is1200"/>
 			<Option target="test"/>
+		</Unit>
+		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/project/test/test.new.c">
+			<Option target="kth_is1200"/>
+			<Option target="test.new"/>
 		</Unit>
 		<Unit filename="C:/Users/Orievg/Documents/GitHub/kth-is1200/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

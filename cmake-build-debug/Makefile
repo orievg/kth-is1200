@@ -149,30 +149,30 @@ test/fast:
 .PHONY : test/fast
 
 #=============================================================================
-# Target rules for targets named ass5
+# Target rules for targets named test.new
 
 # Build rule for target.
-ass5: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 ass5
-.PHONY : ass5
+test.new: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 test.new
+.PHONY : test.new
 
 # fast build rule for target.
-ass5/fast:
-	$(MAKE) -f CMakeFiles\ass5.dir\build.make CMakeFiles/ass5.dir/build
-.PHONY : ass5/fast
+test.new/fast:
+	$(MAKE) -f CMakeFiles\test.new.dir\build.make CMakeFiles/test.new.dir/build
+.PHONY : test.new/fast
 
 #=============================================================================
-# Target rules for targets named figures
+# Target rules for targets named random
 
 # Build rule for target.
-figures: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 figures
-.PHONY : figures
+random: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 random
+.PHONY : random
 
 # fast build rule for target.
-figures/fast:
-	$(MAKE) -f CMakeFiles\figures.dir\build.make CMakeFiles/figures.dir/build
-.PHONY : figures/fast
+random/fast:
+	$(MAKE) -f CMakeFiles\random.dir\build.make CMakeFiles/random.dir/build
+.PHONY : random/fast
 
 orievg/lab-3/time4int/mipslabdata.obj: orievg/lab-3/time4int/mipslabdata.c.obj
 
@@ -660,36 +660,6 @@ orievg/lab-3/timer4timer/time4io.c.s:
 	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/orievg/lab-3/timer4timer/time4io.c.s
 .PHONY : orievg/lab-3/timer4timer/time4io.c.s
 
-orievg/lab-4/ass5.obj: orievg/lab-4/ass5.c.obj
-
-.PHONY : orievg/lab-4/ass5.obj
-
-# target to build an object file
-orievg/lab-4/ass5.c.obj:
-	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.obj
-	$(MAKE) -f CMakeFiles\ass5.dir\build.make CMakeFiles/ass5.dir/orievg/lab-4/ass5.c.obj
-.PHONY : orievg/lab-4/ass5.c.obj
-
-orievg/lab-4/ass5.i: orievg/lab-4/ass5.c.i
-
-.PHONY : orievg/lab-4/ass5.i
-
-# target to preprocess a source file
-orievg/lab-4/ass5.c.i:
-	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.i
-	$(MAKE) -f CMakeFiles\ass5.dir\build.make CMakeFiles/ass5.dir/orievg/lab-4/ass5.c.i
-.PHONY : orievg/lab-4/ass5.c.i
-
-orievg/lab-4/ass5.s: orievg/lab-4/ass5.c.s
-
-.PHONY : orievg/lab-4/ass5.s
-
-# target to generate assembly for a file
-orievg/lab-4/ass5.c.s:
-	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/orievg/lab-4/ass5.c.s
-	$(MAKE) -f CMakeFiles\ass5.dir\build.make CMakeFiles/ass5.dir/orievg/lab-4/ass5.c.s
-.PHONY : orievg/lab-4/ass5.c.s
-
 project/.old/main.obj: project/.old/main.c.obj
 
 .PHONY : project/.old/main.obj
@@ -744,35 +714,35 @@ project/main.c.s:
 	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/project/main.c.s
 .PHONY : project/main.c.s
 
-project/test.obj: project/test.c.obj
+project/test/random.obj: project/test/random.c.obj
 
-.PHONY : project/test.obj
+.PHONY : project/test/random.obj
 
 # target to build an object file
-project/test.c.obj:
-	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/project/test.c.obj
-	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test.c.obj
-.PHONY : project/test.c.obj
+project/test/random.c.obj:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test/random.c.obj
+	$(MAKE) -f CMakeFiles\random.dir\build.make CMakeFiles/random.dir/project/test/random.c.obj
+.PHONY : project/test/random.c.obj
 
-project/test.i: project/test.c.i
+project/test/random.i: project/test/random.c.i
 
-.PHONY : project/test.i
+.PHONY : project/test/random.i
 
 # target to preprocess a source file
-project/test.c.i:
-	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/project/test.c.i
-	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test.c.i
-.PHONY : project/test.c.i
+project/test/random.c.i:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test/random.c.i
+	$(MAKE) -f CMakeFiles\random.dir\build.make CMakeFiles/random.dir/project/test/random.c.i
+.PHONY : project/test/random.c.i
 
-project/test.s: project/test.c.s
+project/test/random.s: project/test/random.c.s
 
-.PHONY : project/test.s
+.PHONY : project/test/random.s
 
 # target to generate assembly for a file
-project/test.c.s:
-	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/project/test.c.s
-	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test.c.s
-.PHONY : project/test.c.s
+project/test/random.c.s:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test/random.c.s
+	$(MAKE) -f CMakeFiles\random.dir\build.make CMakeFiles/random.dir/project/test/random.c.s
+.PHONY : project/test/random.c.s
 
 project/test/test.obj: project/test/test.c.obj
 
@@ -804,6 +774,36 @@ project/test/test.c.s:
 	$(MAKE) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/project/test/test.c.s
 .PHONY : project/test/test.c.s
 
+project/test/test.new.obj: project/test/test.new.c.obj
+
+.PHONY : project/test/test.new.obj
+
+# target to build an object file
+project/test/test.new.c.obj:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test/test.new.c.obj
+	$(MAKE) -f CMakeFiles\test.new.dir\build.make CMakeFiles/test.new.dir/project/test/test.new.c.obj
+.PHONY : project/test/test.new.c.obj
+
+project/test/test.new.i: project/test/test.new.c.i
+
+.PHONY : project/test/test.new.i
+
+# target to preprocess a source file
+project/test/test.new.c.i:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test/test.new.c.i
+	$(MAKE) -f CMakeFiles\test.new.dir\build.make CMakeFiles/test.new.dir/project/test/test.new.c.i
+.PHONY : project/test/test.new.c.i
+
+project/test/test.new.s: project/test/test.new.c.s
+
+.PHONY : project/test/test.new.s
+
+# target to generate assembly for a file
+project/test/test.new.c.s:
+	$(MAKE) -f CMakeFiles\kth_is1200.dir\build.make CMakeFiles/kth_is1200.dir/project/test/test.new.c.s
+	$(MAKE) -f CMakeFiles\test.new.dir\build.make CMakeFiles/test.new.dir/project/test/test.new.c.s
+.PHONY : project/test/test.new.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -815,8 +815,8 @@ help:
 	@echo ... kth_is1200
 	@echo ... rebuild_cache
 	@echo ... test
-	@echo ... ass5
-	@echo ... figures
+	@echo ... test.new
+	@echo ... random
 	@echo ... orievg/lab-3/time4int/mipslabdata.obj
 	@echo ... orievg/lab-3/time4int/mipslabdata.i
 	@echo ... orievg/lab-3/time4int/mipslabdata.s
@@ -871,21 +871,21 @@ help:
 	@echo ... orievg/lab-3/timer4timer/time4io.obj
 	@echo ... orievg/lab-3/timer4timer/time4io.i
 	@echo ... orievg/lab-3/timer4timer/time4io.s
-	@echo ... orievg/lab-4/ass5.obj
-	@echo ... orievg/lab-4/ass5.i
-	@echo ... orievg/lab-4/ass5.s
 	@echo ... project/.old/main.obj
 	@echo ... project/.old/main.i
 	@echo ... project/.old/main.s
 	@echo ... project/main.obj
 	@echo ... project/main.i
 	@echo ... project/main.s
-	@echo ... project/test.obj
-	@echo ... project/test.i
-	@echo ... project/test.s
+	@echo ... project/test/random.obj
+	@echo ... project/test/random.i
+	@echo ... project/test/random.s
 	@echo ... project/test/test.obj
 	@echo ... project/test/test.i
 	@echo ... project/test/test.s
+	@echo ... project/test/test.new.obj
+	@echo ... project/test/test.new.i
+	@echo ... project/test/test.new.s
 .PHONY : help
 
 
