@@ -325,6 +325,10 @@ void Timer2init(){
   T2CONSET = 0x8000; // start the timer
 }
 
+void Buttoninit(){
+
+}
+
 void FieldToDisplay(){
   // Dalvie
   int x, y;

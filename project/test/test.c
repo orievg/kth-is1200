@@ -601,6 +601,9 @@ void collisionCheck(char pieceName, int state,int * direction){
         int coord_11 = position+21;
         int coord_12 = position+22;
         int coord_13 = position+23;
+        int coord_a = position + 18;
+        int coord_b = position + 19;
+
         if (pieceName=='o' ){
             if (field[coord_11]==1 || field[coord_12]==1){
                 done =1;
@@ -718,7 +721,7 @@ void collisionCheck(char pieceName, int state,int * direction){
         }
         if (pieceName=='z' ){
             if (state==0){
-                if (field[coord_4]==1 || field[coord_8]==1 || field[coord_9]==1){
+                if (field[coord_7] || field[coord_11]==1 || field[coord_12]==1){
                     done = 1;
                 }
             }
@@ -862,7 +865,7 @@ void move(char pieceName, int state,int * direction){
             x_++;
         }
     }
-    
+
     spawnPiece(pieceName,state);
 
 
