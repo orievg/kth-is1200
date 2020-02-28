@@ -263,6 +263,19 @@ void drawLine( int x, int y, int width){
   renderScreen(icon);
 }
 
+void clearLine( int x, int y, int width){
+  // draws a line of length width. Helper function for drawBlocks.
+  int offset = 0;
+
+  if (x > 8)
+  {
+    offset = x / 8;
+  }
+  icon[128*offset + y] &= ~width << (x - offset*8);
+
+  renderScreen(icon);
+}
+
 void drawBlock(int x, int y){
   // x, y is the top left corner. Fixed width of 2 pixels
   // helper function for shapes
@@ -320,7 +333,7 @@ void drawL(int x, int y){
 
 void Timer2init(){
   T2CON = 0x70; // sets the timer to off and prescale to 1:256
-  PR2 = (80000000 / 256) ; // timeout every 100ms
+  PR2 = (80000000 / 256)/100 ; // timeout every 100ms
   TMR2 = 0; // reset the timer
   T2CONSET = 0x8000; // start the timer
 }
@@ -349,6 +362,9 @@ void FieldToDisplay(){
       if (field[(i + z*10)] == 1){
         drawBlock((i * 2) + 2, (z*2 + 4));
       }
+    //  else if (field[(i + z*10)] == 0){
+    //    clearLine((i * 2) + 2, (z*2 + 4), 3);
+    //  }
     }
 }
 }
@@ -360,7 +376,7 @@ void ClearScreen(){
     icon[i] = COPY[i];
   }
 
-  renderScreen(icon);
+  // renderScreen(icon);
 }
 
 int main() {
@@ -380,23 +396,28 @@ int main() {
   while(1){
     if (IFS(0) & 0x100){
       IFSCLR(0) = 0x100;
-      delay(1000000);
-      int btns = getBtns();
 
+      int btns = getBtns();
+      delay(1000000);
       if (btns == 4){
         direction = 2;
         move(pieceName, pieceState, directionPoint);
+        ClearScreen();
+        FieldToDisplay();
+        direction = 0;
       }
       else if (btns == 2){
         direction = 1;
       move(pieceName, pieceState, directionPoint);
+      ClearScreen();
+      FieldToDisplay();
+      direction = 0;
     }
     else {
       move(pieceName, pieceState, directionPoint);
-    }
-      delay(100000);
       ClearScreen();
       FieldToDisplay();
+    }
       if (done == 1){
         Done();
       }

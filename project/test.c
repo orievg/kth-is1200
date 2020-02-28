@@ -51,7 +51,7 @@ char randomPiece(){
   //  rnd = (int*)malloc(sizeof(int));
   //  rnd = ((int)r%7);
     //srand(abs(rnd));
-    r = rand() % 7; // fix this. to make it truly random. 
+    r = rand() % 7; // fix this. to make it truly random.
 
     switch(r){
         case 0:
@@ -722,7 +722,7 @@ void collisionCheck(char pieceName, int state,int * direction){
         }
         if (pieceName=='t' ){
             if (state==0){
-                if (field[coord_3]==1 || field[coord_15]==1){
+                if (field[coord_7]==1 || field[coord_8] == 1 || field[coord_9]==1){
                     done = 1;
                 }
             }

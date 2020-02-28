@@ -16,7 +16,7 @@
 int rot = 0;//rotation of an object
 int position = 0;
 int x_ = 0;
-int y_ = 0; //-1 form desired row
+int y_ = 1; //-1 form desired row
 int drop = 0;
 int pieceState = 1;
 char pieceName = 'i';
@@ -57,9 +57,9 @@ char randomPiece(){
 //  int rnd;
   rnd = (int*)malloc(sizeof(int));
 //  rnd = ((int)r%7);
-  srand(abs(rnd));
+  int seed = abs((int)rnd);
+  // srand(seed);
   r = rand() % 7;
-
     switch(r){ // testing
         case 0:
             return 'o';
@@ -81,6 +81,9 @@ char randomPiece(){
             break;
         case 6:
             return 'z';
+            break;
+        default:
+            return 'o';
             break;
     }
 }
@@ -239,17 +242,18 @@ void rotate(int r, char piece, int * state){
         if ((*state)<3){
             (*state)++;
         }
-        else
+        else{
             (*state)=0;
-
+          }
     }
-    if (r==2)
+    if (r==2){
         if ((*state)>0){
             (*state)--;
         }
         else{
             (*state)=3;
           }
+        }
     spawnPiece(piece,(*state));
 }
 void Done(){
@@ -931,37 +935,66 @@ void tick(float sec)
 
 
 
-void main(){
-  int * stateP = &pieceState;
-  int * directionP = &pieceDirection;
-  int i;
-  /*
-  spawnPiece('i', 1);
-  showField();
-  move('i', 1, directionP);
-  showField();
-
-  for(i = 0; i < 25; i++){
-    move('i', 1, directionP);
-    showField();
-    if (done == 1){
-      Done();
-    }
-  }
-  */
-
-
-  //  time_t ti;
-    // Intializes random number generator
-// srand((unsigned) time(&ti));
-//    int shape = rand() % 7;
-
-
-    //int dir =2;
+int main(){
+    int * stateP = &pieceState;
+    int * directionP = &pieceDirection;
+    int i;
 
 
     spawnPiece(pieceName,pieceState);
     showField();
+
+    while(1){
+      move(pieceName, pieceState, directionP);
+      showField();
+      if (done == 1){
+        Done();
+        break;
+      }
+    }
+
+    // down, down, right, right, down, left, left, down.
+
+    move(pieceName, pieceState, directionP); // D
+    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
+    showField();
+
+    move(pieceName, pieceState, directionP);// D
+    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
+    showField();
+
+    pieceDirection = 1;
+    move(pieceName, pieceState, directionP); // R
+    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
+    showField();
+
+    move(pieceName, pieceState, directionP); // R
+    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
+    showField();
+
+    pieceDirection = 0;
+    move(pieceName, pieceState, directionP); // D
+    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
+    showField();
+
+    pieceDirection = 2;
+    move(pieceName, pieceState, directionP); // L
+    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
+    showField();
+
+    move(pieceName, pieceState, directionP); // L
+    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
+    showField();
+    
+    pieceDirection = 0;
+    move(pieceName, pieceState, directionP); // D
+    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
+    showField();
+
+
+
+
+    /*
     int done1= 0;
     while (done != 1 && quit!=1){
       //  tick(1);
@@ -989,9 +1022,7 @@ void main(){
         if (done == 1){
             Done();
         }
-
-
-
       }
-
+      */
+      return 0;
 }
