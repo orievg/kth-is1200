@@ -320,13 +320,22 @@ void drawL(int x, int y){
 
 void Timer2init(){
   T2CON = 0x70; // sets the timer to off and prescale to 1:256
-  PR2 = (80000000 / 256)/10 ; // timeout every 100ms
+  PR2 = (80000000 / 256) ; // timeout every 100ms
   TMR2 = 0; // reset the timer
   T2CONSET = 0x8000; // start the timer
 }
 
-void Buttoninit(){
 
+void Buttoninit(){ // put in other c file
+    TRISD &= 0xfe0;
+    TRISFSET  = 0x1;
+}
+
+int getBtns(){ // put in other c file
+  int btns = (PORTD >> 5) & 0x7;
+  //int btn1 = (PORTF & 0x1) << 3;
+//  int rtn = btns & btn1;
+  return btns;
 }
 
 void FieldToDisplay(){
@@ -365,13 +374,27 @@ int main() {
 	display_wakeup();
   spawnPiece('i', 1);
   FieldToDisplay();
+  Buttoninit();
   Timer2init();
 
   while(1){
     if (IFS(0) & 0x100){
       IFSCLR(0) = 0x100;
+      delay(1000000);
+      int btns = getBtns();
+
+      if (btns == 4){
+        direction = 2;
+        move(pieceName, pieceState, directionPoint);
+      }
+      else if (btns == 2){
+        direction = 1;
       move(pieceName, pieceState, directionPoint);
-      delay(10000000);
+    }
+    else {
+      move(pieceName, pieceState, directionPoint);
+    }
+      delay(100000);
       ClearScreen();
       FieldToDisplay();
       if (done == 1){

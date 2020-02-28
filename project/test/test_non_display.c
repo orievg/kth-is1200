@@ -1,12 +1,10 @@
-
+#include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-
 // #include <time.h>
 #define FIELD_SIZE 210
 #define SMALL_PIECE_SIZE 9
 #define LARGE_PIECE_SIZE 16
-
 //
 
 
@@ -15,7 +13,6 @@
 // Created by Orievg on 2020-02-26.
 //
 //piece arguments
-void *stdout;
 int rot = 0;//rotation of an object
 int position = 0;
 int x_ = 0;
@@ -24,8 +21,8 @@ int drop = 0;
 int pieceState = 1;
 char pieceName = 'i';
 int pieceDirection = 0;
-int quit = 11;
-
+int quit = 60;
+int *Prand;
 //
 int done = 0;
 //define field size
@@ -45,15 +42,25 @@ int *rnd;
 
 //r==1 - clockwise r==2 counterclockwise
 
+void showField(){
+    for (int i=10;i<FIELD_SIZE;i++){
+        printf("%i",field[i]);
+        if ((i+1)%10==0){
+            printf(" %i\n", (i+1)/10);
+        }
+    }
+    printf("\n");
+}
+
 char randomPiece(){
 
-  //  int rnd;
-  //  rnd = (int*)malloc(sizeof(int));
-  //  rnd = ((int)r%7);
-    //srand(abs(rnd));
-    r = rand() % 7; // fix this. to make it truly random. 
+//  int rnd;
+  rnd = (int*)malloc(sizeof(int));
+//  rnd = ((int)r%7);
+  srand(abs(rnd));
+  r = rand() % 7;
 
-    switch(r){
+    switch(r){ // testing
         case 0:
             return 'o';
             break;
@@ -252,6 +259,7 @@ void Done(){
     pieceState=0;
     pieceDirection = 0;
     pieceName= randomPiece();
+
     spawnPiece(pieceName,pieceState);
 
 }
@@ -722,7 +730,7 @@ void collisionCheck(char pieceName, int state,int * direction){
         }
         if (pieceName=='t' ){
             if (state==0){
-                if (field[coord_3]==1 || field[coord_15]==1){
+                if (field[coord_7]==1 || field[coord_8]==1 || field[coord_9]==1){
                     done = 1;
                 }
             }
@@ -831,15 +839,15 @@ void boundCheck(char pieceName, int state,int * direction){
     }
     else if ((*direction)==0){
         if (pieceName == 'j'||pieceName == 'l'||pieceName == 's'||pieceName == 't'||pieceName == 'z'){
-            if (state==0 &&y_==20){
+            if (state==0 &&y_==19){
                 done = 1;
             }
-            else if (y_==19){
+            else if (y_==18 && (state==1||state==2||state==3)){
                 done = 1;
             }
         }
         else if (pieceName == 'i'){
-            if ((state==0 && y_==19)||(state==3 && y_==18)){
+            if ((state==0 && y_==20)||(state==3 && y_==19)){
                 done = 1;
             }
             else{
@@ -888,6 +896,7 @@ void move(char pieceName, int state,int * direction){
             x_++;
         }
     }
+
     spawnPiece(pieceName,state);
 
 
@@ -905,4 +914,84 @@ void rowCheck(){
         }
         sum=0;
     }
+}
+/*
+void tick(float sec)
+{
+    // Converting time into milli_seconds
+    int ms = 1000 * sec;
+
+    // Storing start time
+    clock_t start_time = clock();
+
+    // looping till required time is not achieved
+    while (clock() < start_time + ms);
+}
+*/
+
+
+
+void main(){
+  int * stateP = &pieceState;
+  int * directionP = &pieceDirection;
+  int i;
+  /*
+  spawnPiece('i', 1);
+  showField();
+  move('i', 1, directionP);
+  showField();
+
+  for(i = 0; i < 25; i++){
+    move('i', 1, directionP);
+    showField();
+    if (done == 1){
+      Done();
+    }
+  }
+  */
+
+
+  //  time_t ti;
+    // Intializes random number generator
+// srand((unsigned) time(&ti));
+//    int shape = rand() % 7;
+
+
+    //int dir =2;
+
+
+    spawnPiece(pieceName,pieceState);
+    showField();
+    int done1= 0;
+    while (done != 1 && quit!=1){
+      //  tick(1);
+        printf("Tick\n");
+
+
+
+        if (quit==5){
+            pieceDirection=2;
+        }
+        if (rot >0){
+            rotate(rot,pieceName,stateP);
+        }
+        else if (pieceDirection>0){
+            move(pieceName,pieceState, directionP);
+        }
+        if (pieceDirection==0) {
+            move(pieceName,pieceState, directionP);
+        }
+        printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, rnd, quit);
+        showField();
+        rowCheck();
+        quit--;
+
+        if (done == 1){
+            Done();
+        }
+
+
+
+      }
+
 }
