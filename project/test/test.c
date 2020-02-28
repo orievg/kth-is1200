@@ -90,8 +90,8 @@ int drop = 0;
 int pieceState;
 char pieceName;
 int pieceDirection = 0;
-char pieceOnHold;
-
+char pieceOnHold = ' ';
+char nextPiece;
 //
 void clrPiece(char pieceName, int state){
     position = x_+y_*10;
@@ -739,7 +739,7 @@ void collisionCheck(char pieceName, int state,int * direction){
                 }
             }
             if (state==1){
-                if(field[coord_8]==1 || field[coord_6]==1){
+                if(field[coord_8]==1 || field[coord_9]==1){
                     done = 1;
                 }
             }
@@ -896,18 +896,11 @@ void rowCheck(){
         sum=0;
     }
 }
-//s=1 put on hold, s=2 release
-void holdPiece(char pieceName, int s) {
-    char temp;
-    if (s == 1) {
-        pieceOnHold = pieceName;
-    }
-    else if (s == 2) {
-        temp =pieceOnHold;
-        pieceOnHold = pieceName;
-        pieceName =
-    }
-}
+//
+//void holdPiece(char *piece1, piece ) {
+//
+//
+//}
 void tick(float sec)
 {
     // Converting time into milli_seconds
@@ -918,6 +911,11 @@ void tick(float sec)
 
     // looping till required time is not achieved
     while (clock() < start_time + ms);
+}
+exchangePieces(char * piece1, char * piece2){
+    char temp = (*piece1);
+    (*piece1) = (*piece2);
+    (*piece2) = temp;
 }
 int quit = 50;
 void main(){
@@ -930,6 +928,10 @@ void main(){
     int * xP = &x_;
     (*xP) = randomOffset();
     int * directionP = &pieceDirection;
+    // generate next piece
+    char *nextP =& nextPiece;
+    (*nextP)= randomPiece();
+    char * onHoldP = &pieceOnHold;
     //show empty field
     showField();
     //spawn piece on field
@@ -940,8 +942,11 @@ void main(){
     int done1= 0;
     while (quit!=1 && done!=1){
         tick(0.5);
-        printf("Tick\n");
-        if (quit==30){
+        printf("Tick%i\n",50-quit);
+        if (quit==45){
+            hold =1;
+        }
+        if (quit ==40){
             hold =1;
         }
         if (rot >0){
@@ -954,28 +959,39 @@ void main(){
             move(pieceName,pieceState, directionP);
         }
         if (hold ==1){
-            holdPiece((*nameP),hold);
-            clrPiece((*nameP),(*stateP));
+            if (pieceOnHold == ' '){
+                clrPiece((*nameP),(*stateP));
+                pieceOnHold = pieceName;
+                hold = 0;
+            }
+            else {
+                clrPiece((*nameP), (*stateP));
+                exchangePieces(onHoldP, nameP);
+                //(*nextP) = (*nameP);
+            }
             //you write to display here instead
             printf("PIECE ON HOLD: %c\n",pieceOnHold);
             done = 1;
-            hold =0;
-        }
-        else if (hold ==2){
-            holdPiece((*nameP),hold);
-            hold = 0;
         }
         printf("x=%i, y=%i, piece: %c, direction: %i, done %i\n",x_,y_, pieceName, (*directionP), done);
         showField();
         rowCheck();
         quit--;
         if (done == 1){
+            //next piece stays same
+            if (hold ==1){
+                hold = 0;
+            }
             //generate new piece
-            (*nameP) = randomPiece();
+            else{
+                (*nameP)=(*nextP);
+                (*nextP) = randomPiece();
+            }
             (*stateP) = randomState();
             (*xP) = randomOffset();
             y_=0;
             printf("Spawned piece x=%i, y=%i, piece: %c, direction: %i, state:%i\n",(*xP),y_, pieceName, (*directionP),(*stateP));
+            printf("The next piece will be: %c\n", (*nextP));
             spawnPiece((*nameP),(*stateP));
             Done();
         }

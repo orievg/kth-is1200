@@ -6,6 +6,7 @@
       <config projectName="kth_is1200" targetName="kth_is1200" />
       <config projectName="kth_is1200" targetName="random" />
       <config projectName="kth_is1200" targetName="test.new" />
+      <config projectName="kth_is1200" targetName="main" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -55,6 +56,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kth_is1200" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kth_is1200" RUN_TARGET_NAME="main">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="random" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kth_is1200" TARGET_NAME="random" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kth_is1200" RUN_TARGET_NAME="random">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -72,6 +78,7 @@
     </configuration>
     <list>
       <item itemvalue="CMake Application.kth_is1200" />
+      <item itemvalue="CMake Application.main" />
       <item itemvalue="CMake Application.random" />
       <item itemvalue="CMake Application.test" />
       <item itemvalue="CMake Application.test.new" />
@@ -94,6 +101,7 @@
       <workItem from="1582674315682" duration="10573000" />
       <workItem from="1582715485957" duration="27923000" />
       <workItem from="1582806428213" duration="29024000" />
+      <workItem from="1582899291964" duration="3082000" />
     </task>
     <servers />
   </component>
@@ -114,6 +122,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="536" y="182" key="#Inspections" timestamp="1582901629040">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="536" y="182" key="#Inspections/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582901629040" />
     <state x="724" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582825064178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -128,22 +140,22 @@
     </state>
     <state x="774" y="296" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582816545580" />
     <state x="2694" y="296" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581353986778" />
-    <state width="1340" height="340" key="GridCell.Tab.0.bottom" timestamp="1582850378131">
+    <state width="1494" height="929" key="GridCell.Tab.0.bottom" timestamp="1582902312611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582850378131" />
-    <state width="1340" height="340" key="GridCell.Tab.0.center" timestamp="1582850378131">
+    <state width="1494" height="929" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582902312611" />
+    <state width="1494" height="929" key="GridCell.Tab.0.center" timestamp="1582902312611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="340" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582850378131" />
-    <state width="1340" height="340" key="GridCell.Tab.0.left" timestamp="1582850378131">
+    <state width="1494" height="929" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582902312611" />
+    <state width="1494" height="929" key="GridCell.Tab.0.left" timestamp="1582902312611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="340" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582850378131" />
-    <state width="1340" height="340" key="GridCell.Tab.0.right" timestamp="1582850378131">
+    <state width="1494" height="929" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582902312611" />
+    <state width="1494" height="929" key="GridCell.Tab.0.right" timestamp="1582902312611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="340" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582850378131" />
+    <state width="1494" height="929" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582902312611" />
     <state width="1340" height="340" key="GridCell.Tab.1.bottom" timestamp="1582850378132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -172,10 +184,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2415" y="183" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581353924001" />
-    <state x="2610" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1582806528434">
+    <state x="2610" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1582899292705">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2610" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582806528434" />
+    <state x="2610" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582899292705" />
     <state x="2610" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582119559287" />
     <state x="776" y="486" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582739478990">
       <screen x="0" y="0" width="1920" height="1040" />
