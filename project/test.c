@@ -21,7 +21,7 @@ int drop = 0;
 int pieceState = 1;
 char pieceName = 'i';
 int pieceDirection = 0;
-int quit = 60;
+int quit = 11;
 //
 int done = 0;
 //define field size
@@ -39,7 +39,7 @@ int z_[][SMALL_PIECE_SIZE]={{1,1,0,0,1,1,0,0,0},{0,0,1,0,1,1,0,1,0},{0,0,0,1,1,0
 //
 
 //r==1 - clockwise r==2 counterclockwise
-
+/*
 void showField(){
     for (int i=10;i<FIELD_SIZE;i++){
         printf("%i",field[i]);
@@ -49,7 +49,7 @@ void showField(){
     }
     printf("\n");
 }
-
+*/
 
 void clrPiece(char pieceName, int state){
     position = x_+y_*10;
@@ -862,7 +862,6 @@ void move(char pieceName, int state,int * direction){
             x_++;
         }
     }
-    
     spawnPiece(pieceName,state);
 
 
@@ -897,31 +896,26 @@ void tick(float sec)
 */
 
 
-
+/*
 void main(){
   int * stateP = &pieceState;
   int * directionP = &pieceDirection;
   int i;
-  /*
   spawnPiece('i', 1);
   showField();
   move('i', 1, directionP);
   showField();
 
-  for(i = 0; i < 25; i++){
+  for (i = 0; i < 16; i++){
     move('i', 1, directionP);
     showField();
-    if (done == 1){
-      Done();
-    }
   }
-  */
-
-
   //  time_t ti;
     // Intializes random number generator
 // srand((unsigned) time(&ti));
 //    int shape = rand() % 7;
+
+    showField();
 
 
     //int dir =2;
@@ -930,12 +924,9 @@ void main(){
     spawnPiece(pieceName,pieceState);
     showField();
     int done1= 0;
-    while (done != 1 && quit!=1){
+    while (quit!=1 && done!=1){
       //  tick(1);
         printf("Tick\n");
-
-
-
         if (quit==5){
             pieceDirection=2;
         }
@@ -948,7 +939,7 @@ void main(){
         if (pieceDirection==0) {
             move(pieceName,pieceState, directionP);
         }
-        printf("x=%i, y=%i, piece: %c, direction: %i, done %i, quit %i\n",x_,y_, pieceName, (*directionP), done, quit);
+        printf("x=%i, y=%i, piece: %c, direction: %i, done %i\n",x_,y_, pieceName, (*directionP), done);
         showField();
         rowCheck();
         quit--;
@@ -962,3 +953,4 @@ void main(){
       }
 
 }
+*/
