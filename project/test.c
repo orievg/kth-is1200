@@ -39,17 +39,7 @@ int z_[][SMALL_PIECE_SIZE]={{1,1,0,0,1,1,0,0,0},{0,0,1,0,1,1,0,1,0},{0,0,0,1,1,0
 //
 
 //r==1 - clockwise r==2 counterclockwise
-/*
-void showField(){
-    for (int i=10;i<FIELD_SIZE;i++){
-        printf("%i",field[i]);
-        if ((i+1)%10==0){
-            printf(" %i\n", (i+1)/10);
-        }
-    }
-    printf("\n");
-}
-*/
+
 
 void clrPiece(char pieceName, int state){
     position = x_+y_*10;
@@ -601,6 +591,8 @@ void collisionCheck(char pieceName, int state,int * direction){
         int coord_11 = position+21;
         int coord_12 = position+22;
         int coord_13 = position+23;
+        int coord_a = position + 18;
+        int coord_b = position + 19;
         if (pieceName=='o' ){
             if (field[coord_11]==1 || field[coord_12]==1){
                 done =1;
@@ -718,7 +710,7 @@ void collisionCheck(char pieceName, int state,int * direction){
         }
         if (pieceName=='z' ){
             if (state==0){
-                if (field[coord_4]==1 || field[coord_8]==1 || field[coord_9]==1){
+                if (field[coord_7] || field[coord_11]==1 || field[coord_12]==1){
                     done = 1;
                 }
             }
@@ -880,77 +872,3 @@ void rowCheck(){
         sum=0;
     }
 }
-
-/*
-void tick(float sec)
-{
-    // Converting time into milli_seconds
-    int ms = 1000 * sec;
-
-    // Storing start time
-    clock_t start_time = clock();
-
-    // looping till required time is not achieved
-    while (clock() < start_time + ms);
-}
-*/
-
-
-/*
-void main(){
-  int * stateP = &pieceState;
-  int * directionP = &pieceDirection;
-  int i;
-  spawnPiece('i', 1);
-  showField();
-  move('i', 1, directionP);
-  showField();
-
-  for (i = 0; i < 16; i++){
-    move('i', 1, directionP);
-    showField();
-  }
-  //  time_t ti;
-    // Intializes random number generator
-// srand((unsigned) time(&ti));
-//    int shape = rand() % 7;
-
-    showField();
-
-
-    //int dir =2;
-
-
-    spawnPiece(pieceName,pieceState);
-    showField();
-    int done1= 0;
-    while (quit!=1 && done!=1){
-      //  tick(1);
-        printf("Tick\n");
-        if (quit==5){
-            pieceDirection=2;
-        }
-        if (rot >0){
-            rotate(rot,pieceName,stateP);
-        }
-        else if (pieceDirection>0){
-            move(pieceName,pieceState, directionP);
-        }
-        if (pieceDirection==0) {
-            move(pieceName,pieceState, directionP);
-        }
-        printf("x=%i, y=%i, piece: %c, direction: %i, done %i\n",x_,y_, pieceName, (*directionP), done);
-        showField();
-        rowCheck();
-        quit--;
-
-        if (done == 1){
-            Done();
-        }
-
-
-
-      }
-
-}
-*/
