@@ -2,7 +2,8 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
-// #include "test.c"
+#include "test.h"
+
 
 #define DISPLAY_VDD PORTFbits.RF6
 #define DISPLAY_VBATT PORTFbits.RF5
@@ -19,9 +20,7 @@
 #define DISPLAY_RESET_PORT PORTG
 #define DISPLAY_RESET_MASK 0x200
 
-uint8_t game[128*4] = {0};
-
- uint8_t  icon[] = { // border. other functions alter this.
+uint8_t  COPY[] = { // array used for updating screen.
 	255, 255, 255, 255, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3,
@@ -87,6 +86,73 @@ uint8_t game[128*4] = {0};
   192, 192, 192, 192, 192, 192, 192, 192,
   192, 192, 192, 192, 192, 192, 255, 255,
 };
+uint8_t  icon[] = { // border. other functions alter this.
+	255, 255, 255, 255, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 3, 3, 3, 255, 255,
+	255, 255, 255, 255, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 255, 255,
+	255, 255, 255, 255, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 255, 255,
+	255, 255, 255, 255, 192, 192, 192, 192,
+	192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 192, 192,
+  192, 192, 192, 192, 192, 192, 255, 255,
+};
+
 
 void delay(int cyc) {
     int i;
@@ -164,12 +230,6 @@ void display_wakeup() {
     spi_send_recv(0x20);
 
     spi_send_recv(0xAF);
-}
-
-void lightUpPixel(int x, int y) {
-    short offset = 0;
-    if (y > 0) { offset = y / 8; }
-    game[offset * 128 + x] |= 1 << (y - offset * 8);
 }
 
 void renderScreen(uint8_t arr[]) {
@@ -258,185 +318,14 @@ void drawL(int x, int y){
   }
 }
 
-
-// Evegnii code here.
-
-
-#define FIELD_SIZE 210
-#define SMALL_PIECE_SIZE 9
-
-int x_ = 0;
-int y_ = 0;
-//define field size
-    int field[FIELD_SIZE]={0};
-//4x4  pieces
-    int i_[][16]={{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0},{0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0}};
-    int o_[][16]={{0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0}};
-//3x3 pieces
-    int j_[][SMALL_PIECE_SIZE]={{1,0,0,1,1,1,0,0,0},{0,1,1,0,1,0,0,1,0},{0,0,0,1,1,1,0,0,1},{0,1,0,0,1,0,1,1,0}};
-    int l_[][SMALL_PIECE_SIZE]={{0,0,1,1,1,1,0,0,0},{0,1,0,0,1,0,0,1,1},{0,0,0,1,1,1,1,0,0},{1,1,0,0,1,0,0,1,0}};
-    int s_[][SMALL_PIECE_SIZE]={{0,1,1,1,1,0,0,0,0},{0,1,0,0,1,1,0,0,1},{0,0,0,0,1,1,1,1,0},{1,0,0,1,1,0,0,1,0}};
-    int t_[][SMALL_PIECE_SIZE]={{0,1,0,1,1,1,0,0,0},{0,1,0,0,1,1,0,1,0},{0,0,0,1,1,1,0,1,0},{0,1,0,1,1,0,0,1,0}};
-    int z_[][SMALL_PIECE_SIZE]={{1,1,0,0,1,1,0,0,0},{0,0,1,0,1,1,0,0,0},{0,0,0,1,1,0,0,1,1},{0,1,0,1,1,0,1,0,0}};
-    //
-    int quit = 0;
-//r==1 - clockwise
-void rotate(bool r, char piece, int * state){
-    if (piece == 'i'){
-        if (r == 1){
-            if ((*state) == 0)
-                (*state) = 1;
-            else
-                (*state) = 0;
-        }
-        else{
-            if ((*state) == 0)
-                (*state) = 1;
-            else
-                (*state) = 0;
-        }
-
-    }
-    if (piece == 'j'||piece == 'l'||piece == 's'||piece == 't'||piece == 'z'){
-        if (r==1){
-            if ((*state)<3){
-                (*state)++;
-            }
-            else
-                (*state)=0;
-
-        }
-        else
-            if ((*state)>0){
-                (*state)--;
-            }
-            else
-                (*state)=3;
-
-    }
-
+void Timer2init(){
+  T2CON = 0x70; // sets the timer to off and prescale to 1:256
+  PR2 = (80000000 / 256)/10 ; // timeout every 100ms
+  TMR2 = 0; // reset the timer
+  T2CONSET = 0x8000; // start the timer
 }
 
-/*
-void showField(){
-  int i;
-    for ( i=0;i<FIELD_SIZE;i++){
-        printf("%i",field[i]);
-        if ((i+1)%10==0){
-            printf("\n");
-        }
-    }
-    printf("\n");
-}
-*/
-
-void clrPiece(char pieceName){}
-void spawnPiece(char pieceName, int state){
-  int i;
-    int position = x_+y_*10;
-    if (pieceName =='t'){
-        for ( i=0;i<SMALL_PIECE_SIZE;i++){
-            field[position]=t_[state][i];
-
-            if ((i+1)%3==0){
-                position+=7;
-            }
-            position++;
-        }
-    }
-}
-void moveDown(char pieceName, int state){
-    int i;
-    int position = x_+y_*10;
-    if (pieceName =='t'){
-        //clearing the row above
-        for ( i=0;i<3;i++){
-            field[position-10+i]=0;
-        }
-        spawnPiece(pieceName,state);
-    }
-}
-//fuction to move sideways r=1 - right
-void moveSide(char pieceName, int state, int r){
-  int i;
-    int position = x_+y_*10;
-    if (pieceName =='t'&&state==0){
-        //clearing the row above
-        for ( i=0;i<3;i++){
-            field[position-10+i]=0;
-        }
-        spawnPiece(pieceName,state);
-    }
-}
-
-/*
- void tick(int sec)
- {
-    // Converting time into milli_seconds
-    int ms = 1000 * sec;
-
-    // Storing start time
-    clock_t start_time = clock();
-
-    // looping till required time is not achieved
-    while (clock() < start_time + ms);
-} */
-
-/*
-void displayPiece(char pieceName, int state){
-  int i;
-    if (pieceName == 'i'){
-        for( i=0;i<16;i++){
-            printf("%i", i_[state][i]);
-            if ((i+1)%4==0){
-                printf("\n");
-            }
-        }
-    }
-    if (pieceName == 'j'){
-        for( i=0;i<SMALL_PIECE_SIZE;i++){
-            printf("%i", j_[state][i]);
-            if ((i+1)%3==0){
-                printf("\n");
-            }
-        }
-    }
-    if (pieceName == 'l'){
-        for( i=0;i<SMALL_PIECE_SIZE;i++){
-            printf("%i", l_[state][i]);
-            if ((i+1)%3==0){
-                printf("\n");
-            }
-        }
-    }
-    if (pieceName == 's'){
-        for( i=0;i<SMALL_PIECE_SIZE;i++){
-            printf("%i", s_[state][i]);
-            if ((i+1)%3==0){
-                printf("\n");
-            }
-        }
-    }
-    if (pieceName == 't'){
-        for( i=0;i<SMALL_PIECE_SIZE;i++){
-            printf("%i", t_[state][i]);
-            if ((i+1)%3==0){
-                printf("\n");
-            }
-        }
-    }
-    if (pieceName == 'z'){
-        for( i=0;i<SMALL_PIECE_SIZE;i++){
-            printf("%i", z_[state][i]);
-            if ((i+1)%3==0){
-                printf("\n");
-            }
-        }
-    }
-
-}
-*/
-void updateDisplay(){
+void FieldToDisplay(){
   // Dalvie
   int x, y;
   int i, z;
@@ -451,16 +340,72 @@ void updateDisplay(){
 }
 }
 
-int main() {
+void ClearScreen(){
   int i;
+  for (i = 0; i < 512; i++)
+  {
+    icon[i] = COPY[i];
+  }
+
+  renderScreen(icon);
+}
+
+int main() {
+
+  int i;
+  int direction;
+  direction = 0;
+  int* directionPoint = &direction;
+
 	spi_init();
 	display_wakeup();
+  spawnPiece('i', 1);
+  FieldToDisplay();
+  Timer2init();
 
+  while(1){
+    if (IFS(0) & 0x100){
+      IFSCLR(0) = 0x100;
+      move(pieceName, pieceState, directionPoint);
+      delay(10000000);
+      ClearScreen();
+      FieldToDisplay();
+      if (done == 1){
+        Done();
+      }
+  }
+}
 
+/*
+  int * stateP = &pieceState;
+  int * directionP = &pieceDirection;
 
+  int done1= 0;
 
-  spawnPiece('t',0);
-  updateDisplay();
+  while (quit!=1 && done!=1){
+      if (IFS(0) & 0x100){
+      IFSCLR(0) = 0x100;
+      if (quit==5){
+          pieceDirection=2;
+      }
+      if (rot >0){
+          rotate(rot,pieceName,stateP);
+      }
+      else if (pieceDirection>0){
+          move(pieceName,pieceState, directionP);
+      }
+      if (pieceDirection==0) {
+          move(pieceName,pieceState, directionP);
+      }
+
+      rowCheck();
+      quit--;
+
+      if (done == 1){
+          Done();
+      }
+    }
+  } */
 
 	return 0;
 }
