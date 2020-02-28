@@ -712,22 +712,22 @@ void collisionCheck(char pieceName, int state,int * direction){
         }
         if (pieceName=='t' ){
             if (state==0){
-                if (field[coord_3]==1 || field[coord_15]==1){
+                if (field[coord_7]==1 || field[coord_8]==1|| field[coord_9]==1){
                     done = 1;
                 }
             }
             if (state==1){
-                if(field[coord_7]==1 || field[coord_8]==1 || field[coord_9]==1){
+                if(field[coord_11]==1 || field[coord_9]==1){
                     done = 1;
                 }
             }
             if (state==2){
-                if (field[coord_7]==1 || field[coord_11]==1 || field[coord_9]==1){
+                if (field[coord_7]==1 || field[coord_11]==1 || field[coord_12]==1){
                     done = 1;
                 }
             }
             if (state==3){
-                if(field[coord_7]==1 || field[coord_11]==1){
+                if(field[coord_10]==1 || field[coord_8]==1){
                     done = 1;
                 }
             }
@@ -917,7 +917,7 @@ exchangePieces(char * piece1, char * piece2){
     (*piece1) = (*piece2);
     (*piece2) = temp;
 }
-int quit = 100;
+int quit = 200;
 void main(){
     int hold =0;
 //  init 1 Piece arguments
@@ -941,7 +941,7 @@ void main(){
     showField();
     int done1= 0;
     while (quit!=1 && done!=1){
-        tick(0.1);
+        tick(0.01);
         printf("Tick%i\n",50-quit);
 //        if (quit==45){
 //            hold =1;
