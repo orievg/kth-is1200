@@ -598,25 +598,25 @@ void collisionCheck(char pieceName, int state,int * direction){
         }
     }
     if ((*direction)==0){
-        int coord_1 = position-10;
-        int coord_2 = position-9;
-        int coord_3 = position-8;
-        int coord_14 = position-7;
+        int coord_1 = position;
+        int coord_2 = position+1;
+        int coord_3 = position+2;
+        int coord_14 = position+3;
 
-        int coord_4 = position;
-        int coord_5 = position+1;
-        int coord_6 = position+2;
-        int coord_15 = position+3;
+        int coord_4 = position+10;
+        int coord_5 = position+11;
+        int coord_6 = position+12;
+        int coord_15 = position+13;
 
-        int coord_7 = position+10;
-        int coord_8 = position+11;
-        int coord_9 = position+12;
-        int coord_16 = position+13;
+        int coord_7 = position+20;
+        int coord_8 = position+21;
+        int coord_9 = position+22;
+        int coord_16 = position+23;
 
-        int coord_10 = position+20;
-        int coord_11 = position+21;
-        int coord_12 = position+22;
-        int coord_13 = position+23;
+        int coord_10 = position+30;
+        int coord_11 = position+31;
+        int coord_12 = position+32;
+        int coord_13 = position+33;
         if (pieceName=='o' ){
             if (field[coord_11]==1 || field[coord_12]==1){
                 done =1;
@@ -739,7 +739,7 @@ void collisionCheck(char pieceName, int state,int * direction){
                 }
             }
             if (state==1){
-                if(field[coord_8]==1 || field[coord_9]==1){
+                if(field[coord_11]==1 || field[coord_9]==1){
                     done = 1;
                 }
             }
@@ -829,7 +829,7 @@ void boundCheck(char pieceName, int state,int * direction){
             }
         }
         else if (pieceName == 'i'){
-            if ((state==0 && y_==19)||(state==3 && y_==18)){
+            if ((state==0 && y_==20)||(state==3 && y_==19)){
                 done = 1;
             }
             else{
@@ -917,7 +917,7 @@ exchangePieces(char * piece1, char * piece2){
     (*piece1) = (*piece2);
     (*piece2) = temp;
 }
-int quit = 50;
+int quit = 100;
 void main(){
     int hold =0;
 //  init 1 Piece arguments
@@ -941,14 +941,14 @@ void main(){
     showField();
     int done1= 0;
     while (quit!=1 && done!=1){
-        tick(0.5);
+        tick(0.1);
         printf("Tick%i\n",50-quit);
-        if (quit==45){
-            hold =1;
-        }
-        if (quit ==40){
-            hold =1;
-        }
+//        if (quit==45){
+//            hold =1;
+//        }
+//        if (quit ==40){
+//            hold =1;
+//        }
         if (rot >0){
             rotate(rot,pieceName,stateP);
         }
