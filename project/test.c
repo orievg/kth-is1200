@@ -258,7 +258,7 @@ void Done(){
     y_=0;
     pieceState=0;
     pieceDirection = 0;
-    pieceName= randomPiece();
+    pieceName= nextPiece;
     nextPiece = randomPiece();
     spawnPiece(pieceName,pieceState);
 

@@ -284,7 +284,61 @@ static const uint8_t const font[] = {
 	0, 120, 68, 66, 68, 120, 0, 0,
 };
 
+void alterIcon(x, y){
+  // used for next shape feature.
+  int i;
 
+  for (i = 0; i < 2; i++){
+    int offset = 0;
+
+    if (x > 8)
+    {
+      offset = x / 8;
+    }
+    icon[128*offset + y + i] |= 3 << (x - offset*8);
+  }
+}
+void drawO(int x, int y){
+  // shape O consists of 4 blocks. (4 x 4)
+  // coordinates are the top right corner of shape.
+  int X = x + 2;
+  int Y = y + 2;
+
+  alterIcon(x, y);
+  alterIcon(x, Y);
+  alterIcon(X, y);
+  alterIcon(X, Y);
+
+}
+void drawI(int x, int y){
+  // draws the I shape horizontally.
+  // coordinates are the top right corner of shape.
+  int i;
+
+  for (i = x; i < (x + 8); i = i + 2){
+    alterIcon(i, y);
+  }
+}
+void drawJ(int x, int y){
+  // draws the J shape horizontally
+  int X = x + 2;
+  int i;
+  alterIcon(x, y);
+
+  for (i = y; i < (y + 6); i = i + 2){
+    alterIcon(X, i);
+  }
+}
+void drawL(int x, int y){
+  // draws the L shape horizontally
+  int X = x + 2;
+  int i;
+  alterIcon(X, y);
+
+  for(i = y; i < (y + 6); i = i + 2){
+    alterIcon(x, i);
+  }
+}
 void delay(int cyc) {
     int i;
     for(i = cyc; i > 0; i--);
@@ -388,18 +442,6 @@ void drawLine( int x, int y, int width){
 
   renderScreen(icon);
 }
-void clearLine( int x, int y, int width){
-  // draws a line of length width. Helper function for drawBlocks.
-  int offset = 0;
-
-  if (x > 8)
-  {
-    offset = x / 8;
-  }
-  icon[128*offset + y] &= ~width << (x - offset*8);
-
-  renderScreen(icon);
-}
 void drawBlock(int x, int y){
   // x, y is the top left corner. Fixed width of 2 pixels
   // helper function for shapes
@@ -438,9 +480,6 @@ void FieldToDisplay(){
       if (field[(i + z*10)] == 1){
         drawBlock((i * 2) + 2, (z*2 + 4));
       }
-    //  else if (field[(i + z*10)] == 0){
-    //    clearLine((i * 2) + 2, (z*2 + 4), 3);
-    //  }
     }
 }
 }
@@ -451,7 +490,19 @@ void ClearScreen(){
     icon[i] = COPY[i];
   }
 
-  // renderScreen(icon);
+  if (nextPiece == 'i'){
+  drawI(12, 60);
+}
+else if (nextPiece == 'o'){
+  drawO(12, 60);
+}
+else if (nextPiece == 'j'){
+  drawJ(12, 60);
+}
+else if (nextPiece == 'l'){
+  drawL(12, 60);
+}
+
 }
 void display_string() { //copied from lab.
   char score_char[9];
@@ -482,6 +533,9 @@ void display_string() { //copied from lab.
 		}
 	}
 }
+
+
+
 int main() {
 
   int i;
@@ -492,6 +546,7 @@ int main() {
 	spi_init();
 	display_wakeup();
   pieceName = randomPiece();
+  nextPiece = randomPiece();
   spawnPiece(pieceName, pieceState);
   FieldToDisplay();
   Buttoninit();
@@ -558,7 +613,9 @@ int main() {
         break;
       }
       else if (done == 1){
+
         Done();
+
       }
     }
   }

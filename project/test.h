@@ -33,3 +33,4 @@ char* Pnext;
 extern int done;
 extern int quit;
 extern int score;
+extern char nextPiece;
