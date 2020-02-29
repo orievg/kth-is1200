@@ -13,6 +13,10 @@ void collisionCheck(char pieceName, int state,int direction);
 void boundCheck(char pieceName, int state,int direction);
 void move(char pieceName, int state,int * direction);
 void rowCheck();
+void Timer2init();
+void Buttoninit();
+int getBtns();
+int getBTN1();
 
 extern int* PState;
 extern int field[FIELD_SIZE];

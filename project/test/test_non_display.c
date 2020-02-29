@@ -20,7 +20,7 @@ int y_ = 1; //-1 form desired row
 int drop = 0;
 int pieceState = 1;
 char pieceName = 'i';
-int pieceDirection = 0;
+int pieceDirection = 2;
 int quit = 60;
 int *Prand;
 //
@@ -261,7 +261,7 @@ void Done(){
     x_=5;
     y_=0;
     pieceState=0;
-    pieceDirection = 0;
+    pieceDirection = 2;
     pieceName= randomPiece();
 
     spawnPiece(pieceName,pieceState);

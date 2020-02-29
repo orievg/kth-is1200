@@ -21,27 +21,28 @@
 #define DISPLAY_RESET_MASK 0x200
 
 uint8_t  COPY[] = { // array used for updating screen.
-	255, 255, 255, 255, 3, 3, 3, 3,
+  255, 255, 255, 255, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3,
   3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 255, 255,
+  3, 3, 3, 3, 3, 3, 255, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
 	255, 255, 255, 255, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 255, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
@@ -52,12 +53,12 @@ uint8_t  COPY[] = { // array used for updating screen.
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
-	0, 0, 0, 0, 0, 0, 255, 255,
 	255, 255, 255, 255, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 255, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
@@ -68,23 +69,22 @@ uint8_t  COPY[] = { // array used for updating screen.
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
-	0, 0, 0, 0, 0, 0, 255, 255,
 	255, 255, 255, 255, 192, 192, 192, 192,
 	192, 192, 192, 192, 192, 192, 192, 192,
   192, 192, 192, 192, 192, 192, 192, 192,
   192, 192, 192, 192, 192, 192, 192, 192,
   192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 255, 255,
+  192, 192, 192, 192, 192, 192, 255, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
 };
 uint8_t  icon[] = { // border. other functions alter this.
 	255, 255, 255, 255, 3, 3, 3, 3,
@@ -92,22 +92,23 @@ uint8_t  icon[] = { // border. other functions alter this.
 	3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3,
   3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 3, 255, 255,
+  3, 3, 3, 3, 255, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
 	255, 255, 255, 255, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 255, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
@@ -118,12 +119,12 @@ uint8_t  icon[] = { // border. other functions alter this.
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
-	0, 0, 0, 0, 0, 0, 255, 255,
 	255, 255, 255, 255, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 255, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
@@ -134,23 +135,22 @@ uint8_t  icon[] = { // border. other functions alter this.
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
-	0, 0, 0, 0, 0, 0, 255, 255,
 	255, 255, 255, 255, 192, 192, 192, 192,
 	192, 192, 192, 192, 192, 192, 192, 192,
   192, 192, 192, 192, 192, 192, 192, 192,
   192, 192, 192, 192, 192, 192, 192, 192,
   192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 192, 192,
-  192, 192, 192, 192, 192, 192, 255, 255,
+  192, 192, 192, 0, 255, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
 };
 char textbuffer[2][9] = {{'G', 'A', 'M', 'E', ' ', 'O', 'V', 'E', 'R'},{}};
 static const uint8_t const font[] = {
@@ -339,6 +339,36 @@ void drawL(int x, int y){
     alterIcon(x, i);
   }
 }
+void drawS(int x, int y){
+  int X = x +2;
+  int X_neg = x -2;
+  int Y = y + 2;
+
+  alterIcon(x, y);
+  alterIcon(x, Y);
+  alterIcon(X, y);
+  alterIcon(X_neg, Y);
+}
+void drawZ(int x, int y){
+  int X = x + 2;
+  int X_neg = x - 2;
+  int Y = y + 2;
+
+  alterIcon(x, y);
+  alterIcon(x, Y);
+  alterIcon(X, Y);
+  alterIcon(X_neg, y);
+}
+void drawT(int x, int y){
+  int X = x + 2;
+  int X_neg = x - 2;
+  int Y = y + 2;
+
+  alterIcon(x, y);
+  alterIcon(X, Y);
+  alterIcon(x, Y);
+  alterIcon(X_neg, Y);
+}
 void delay(int cyc) {
     int i;
     for(i = cyc; i > 0; i--);
@@ -448,27 +478,10 @@ void drawBlock(int x, int y){
   int i;
 
   for (i = 0; i < 2; i++){
-    drawLine(x, y + i, 3);
+    drawLine(x, y + i, 3); // 2 pixels per block
   }
 }
-void Timer2init(){
-  T2CON = 0x70; // sets the timer to off and prescale to 1:256
-  PR2 = (80000000 / 256)/100 ; // timeout every 100ms
-  TMR2 = 0; // reset the timer
-  T2CONSET = 0x8000; // start the timer
-}
-void Buttoninit(){ // put in other c file
-    TRISDSET = 0xfe0;
-    TRISFSET  = 0x2;
-}
-int getBtns(){ // put in other c file
-  int btns = (PORTD >> 5) & 0x7;
-  return btns;
-}
-int getBTN1() {
-  int btns = (PORTF & 0x2) >> 0x1;
-  return btns;
-}
+
 void FieldToDisplay(){
   // Dalvie
   int x, y;
@@ -502,9 +515,18 @@ else if (nextPiece == 'j'){
 else if (nextPiece == 'l'){
   drawL(12, 60);
 }
+else if (nextPiece == 's'){
+  drawS(12, 60);
+}
+else if (nextPiece == 'z'){
+  drawZ(12, 60);
+}
+else if (nextPiece == 't'){
+  drawT(12, 60);
+}
 
 }
-void display_string() { //copied from lab.
+void display_string() {
   char score_char[9];
   int i, j, k;
 	int c;
@@ -513,7 +535,7 @@ void display_string() { //copied from lab.
     textbuffer[1][i] = score_char[i];
   }
 
-	for(i = 0; i < 2; i++) {
+	for(i = 0; i < 2; i++) { //copied from lab.
 		DISPLAY_COMMAND_DATA_PORT &= ~DISPLAY_COMMAND_DATA_MASK;
 		spi_send_recv(0x22);
 		spi_send_recv(i);
@@ -533,23 +555,88 @@ void display_string() { //copied from lab.
 		}
 	}
 }
+int drawMenu(){
+  int out = 0;
+  int i, j, k, c;
+  char menu_1[2][11] = {{'*','S', 'T','A', 'R', 'T'},
+                        {' ','H', 'I', 'G', 'H', 'S', 'C', 'O', 'R', 'E', 'S'}};
+  char menu_2[2][11] = {{' ','S', 'T','A', 'R', 'T'},
+                        {'*','H', 'I', 'G', 'H', 'S', 'C', 'O', 'R', 'E', 'S'}};
 
+  while(1){
+    delay(1000000);
+    int btns = getBtns();
+
+    if (btns == 4){
+      out = 0;
+    for(i = 0; i < 2; i++) { //copied from lab.
+  		DISPLAY_COMMAND_DATA_PORT &= ~DISPLAY_COMMAND_DATA_MASK;
+  		spi_send_recv(0x22);
+  		spi_send_recv(i);
+
+  		spi_send_recv(0x0);
+  		spi_send_recv(0x10);
+
+  		DISPLAY_COMMAND_DATA_PORT |= DISPLAY_COMMAND_DATA_MASK;
+
+  		for(j = 0; j < 11; j++) {
+  			c = menu_1[i][j];
+  			if(c & 0x80)
+  				continue;
+
+  			for(k = 0; k < 8; k++)
+  				spi_send_recv(font[c*8 + k]);
+        }
+  		}
+  	}
+
+    if (btns == 2){
+    for(i = 0; i < 2; i++) { //copied from lab.
+  		DISPLAY_COMMAND_DATA_PORT &= ~DISPLAY_COMMAND_DATA_MASK;
+  		spi_send_recv(0x22);
+  		spi_send_recv(i);
+
+  		spi_send_recv(0x0);
+  		spi_send_recv(0x10);
+
+  		DISPLAY_COMMAND_DATA_PORT |= DISPLAY_COMMAND_DATA_MASK;
+
+  		for(j = 0; j < 11; j++) {
+  			c = menu_2[i][j];
+  			if(c & 0x80)
+  				continue;
+
+  			for(k = 0; k < 8; k++)
+  				spi_send_recv(font[c*8 + k]);
+        }
+  		}
+  	}
+
+    if (btns == 1){
+      return out;
+      break;
+    }
+  }
+}
 
 
 int main() {
 
   int i;
   int direction;
+  int menu_out;
   direction = 0;
   int* directionPoint = &direction;
 
 	spi_init();
 	display_wakeup();
+  Buttoninit();
+  menu_out = drawMenu();
   pieceName = randomPiece();
   nextPiece = randomPiece();
   spawnPiece(pieceName, pieceState);
   FieldToDisplay();
-  Buttoninit();
+
   Timer2init();
 
   while(1){
@@ -558,53 +645,55 @@ int main() {
 
       int btns = getBtns();
       int btn1 = getBTN1();
-      delay(1000000);
+      // delay(1000000);
 
       if (btns == 4){ // right
         direction = 2;
         move(pieceName, pieceState, directionPoint);
-        ClearScreen();
-        FieldToDisplay();
+      //  ClearScreen();
+      //  FieldToDisplay();
         direction = 0;
       }
       else if (btns == 2){ // left
         direction = 1;
       move(pieceName, pieceState, directionPoint);
-      ClearScreen();
-      FieldToDisplay();
+    //  ClearScreen();
+    //  FieldToDisplay();
       direction = 0;
     }
     else if (btns == 1){ // rotate
       rotate(1, pieceName, PState);
-      ClearScreen();
-      FieldToDisplay();
+      //ClearScreen();
+      //FieldToDisplay();
     }
     else if (btn1 == 1){ // hold
-      if (pieceOnHold == ' '){
+        if (pieceOnHold == ' '){
       clrPiece( pieceName, pieceState);
       pieceOnHold = pieceName;
       exchangePieces(PName, Pnext);
       x_ = 5;
       y_ = 0;
       spawnPiece( pieceName, pieceState);
-      ClearScreen();
-      FieldToDisplay();
+      //ClearScreen();
+      //FieldToDisplay();
     }
-    else{
+      else{
       clrPiece( pieceName, pieceState);
       exchangePieces(PName, onHoldP);
       x_ = 5;
       y_ = 0;
       spawnPiece( pieceName, pieceState);
-      ClearScreen();
-      FieldToDisplay();
+      //ClearScreen();
+      //FieldToDisplay();
         }
     }
     else {
       move(pieceName, pieceState, directionPoint);
-      ClearScreen();
-      FieldToDisplay();
+      //ClearScreen();
+      //FieldToDisplay();
     }
+    ClearScreen();
+    FieldToDisplay();
       if (done == 1 && (y_ == 1 || y_ == 0)) // gameOver.
         {
         ClearScreen();
@@ -612,8 +701,8 @@ int main() {
         display_string();
         break;
       }
-      else if (done == 1){
-
+      else if (done == 1){ // piece can no longer move.
+        rowCheck();
         Done();
 
       }
