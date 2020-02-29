@@ -14,7 +14,7 @@ void boundCheck(char pieceName, int state,int direction);
 void move(char pieceName, int state,int * direction);
 void rowCheck();
 
-
+extern int* PState;
 extern int field[FIELD_SIZE];
 extern int quit;
 extern int rot;//rotation of an object
@@ -25,6 +25,10 @@ extern int drop;
 extern int pieceState;
 extern char pieceName;
 extern int pieceDirection;
-//
+extern char pieceOnHold;
+extern char* PName;
+extern char * onHoldP;
+extern int* PState;
+char* Pnext;
 extern int done;
 extern int quit;

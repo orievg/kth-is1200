@@ -158,14 +158,12 @@ void delay(int cyc) {
     int i;
     for(i = cyc; i > 0; i--);
 }
-
 uint8_t spi_send_recv(uint8_t data) {
     while(!(SPI2STAT & 0x08));
     SPI2BUF = data;
     while(!(SPI2STAT & 0x01));
     return SPI2BUF;
 }
-
 void spi_init() {
     /* Set up peripheral bus clock */
     OSCCON &= ~0x180000;
@@ -178,7 +176,7 @@ void spi_init() {
     PORTE = 0x0;
 
     /* Output pins for display signals */
-    PORTF = 0xFFFF;
+  //  PORTF = 0xFFFF;
     PORTG = (1 << 9);
     ODCF = 0x0;
     ODCG = 0x0;
@@ -201,7 +199,6 @@ void spi_init() {
     /* Turn on SPI */
     SPI2CONSET = 0x8000;
 }
-
 void display_wakeup() {
     DISPLAY_COMMAND_DATA_PORT &= ~DISPLAY_COMMAND_DATA_MASK;
     delay(10);
@@ -231,7 +228,6 @@ void display_wakeup() {
 
     spi_send_recv(0xAF);
 }
-
 void renderScreen(uint8_t arr[]) {
     int i, j;
 
@@ -249,7 +245,6 @@ void renderScreen(uint8_t arr[]) {
             spi_send_recv(arr[i*128 + j]);
     }
 }
-
 void drawLine( int x, int y, int width){
   // draws a line of length width. Helper function for drawBlocks.
   int offset = 0;
@@ -262,7 +257,6 @@ void drawLine( int x, int y, int width){
 
   renderScreen(icon);
 }
-
 void clearLine( int x, int y, int width){
   // draws a line of length width. Helper function for drawBlocks.
   int offset = 0;
@@ -275,7 +269,6 @@ void clearLine( int x, int y, int width){
 
   renderScreen(icon);
 }
-
 void drawBlock(int x, int y){
   // x, y is the top left corner. Fixed width of 2 pixels
   // helper function for shapes
@@ -285,7 +278,6 @@ void drawBlock(int x, int y){
     drawLine(x, y + i, 3);
   }
 }
-
 void drawO(int x, int y){
   // shape O consists of 4 blocks. (4 x 4)
   // coordinates are the top right corner of shape.
@@ -298,7 +290,6 @@ void drawO(int x, int y){
   drawBlock(X, Y);
 
 }
-
 void drawI(int x, int y){
   // draws the I shape horizontally.
   // coordinates are the top right corner of shape.
@@ -308,7 +299,6 @@ void drawI(int x, int y){
     drawBlock(i, y);
   }
 }
-
 void drawJ(int x, int y){
   // draws the J shape horizontally
   int X = x + 2;
@@ -319,7 +309,6 @@ void drawJ(int x, int y){
     drawBlock(X, i);
   }
 }
-
 void drawL(int x, int y){
   // draws the L shape horizontally
   int X = x + 2;
@@ -330,27 +319,24 @@ void drawL(int x, int y){
     drawBlock(x, i);
   }
 }
-
 void Timer2init(){
   T2CON = 0x70; // sets the timer to off and prescale to 1:256
   PR2 = (80000000 / 256)/100 ; // timeout every 100ms
   TMR2 = 0; // reset the timer
   T2CONSET = 0x8000; // start the timer
 }
-
-
 void Buttoninit(){ // put in other c file
-    TRISD &= 0xfe0;
-    TRISFSET  = 0x1;
+    TRISDSET = 0xfe0;
+    TRISFSET  = 0x2;
 }
-
 int getBtns(){ // put in other c file
   int btns = (PORTD >> 5) & 0x7;
-  //int btn1 = (PORTF & 0x1) << 3;
-//  int rtn = btns & btn1;
   return btns;
 }
-
+int getBTN1() {
+  int btns = (PORTF & 0x2) >> 0x1;
+  return btns;
+}
 void FieldToDisplay(){
   // Dalvie
   int x, y;
@@ -368,7 +354,6 @@ void FieldToDisplay(){
     }
 }
 }
-
 void ClearScreen(){
   int i;
   for (i = 0; i < 512; i++)
@@ -388,7 +373,8 @@ int main() {
 
 	spi_init();
 	display_wakeup();
-  spawnPiece('i', 1);
+  pieceName = randomPiece();
+  spawnPiece(pieceName, pieceState);
   FieldToDisplay();
   Buttoninit();
   Timer2init();
@@ -398,27 +384,61 @@ int main() {
       IFSCLR(0) = 0x100;
 
       int btns = getBtns();
+      int btn1 = getBTN1();
       delay(1000000);
-      if (btns == 4){
+
+      if (btns == 4){ // right
         direction = 2;
         move(pieceName, pieceState, directionPoint);
         ClearScreen();
         FieldToDisplay();
         direction = 0;
       }
-      else if (btns == 2){
+      else if (btns == 2){ // left
         direction = 1;
       move(pieceName, pieceState, directionPoint);
       ClearScreen();
       FieldToDisplay();
       direction = 0;
     }
+    else if (btns == 1){ // rotate
+      rotate(1, pieceName, PState);
+      ClearScreen();
+      FieldToDisplay();
+    }
+    else if (btn1 == 1){ // hold
+      if (pieceOnHold == ' '){
+      clrPiece( pieceName, pieceState);
+      pieceOnHold = pieceName;
+      exchangePieces(PName, Pnext);
+      x_ = 5;
+      y_ = 0;
+      spawnPiece( pieceName, pieceState);
+      ClearScreen();
+      FieldToDisplay();
+    }
+    else{
+      clrPiece( pieceName, pieceState);
+      exchangePieces(PName, onHoldP);
+      x_ = 5;
+      y_ = 0;
+      spawnPiece( pieceName, pieceState);
+      ClearScreen();
+      FieldToDisplay();
+        }
+    }
     else {
       move(pieceName, pieceState, directionPoint);
       ClearScreen();
       FieldToDisplay();
     }
-      if (done == 1){
+      if (done == 1 && (y_ == 1 || y_ == 0))
+        {
+        ClearScreen();
+        renderScreen(icon);
+        break;
+      }
+      else if (done == 1){
         Done();
       }
   }

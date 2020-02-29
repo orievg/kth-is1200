@@ -938,58 +938,28 @@ void tick(float sec)
 int main(){
     int * stateP = &pieceState;
     int * directionP = &pieceDirection;
-    int i;
+    int i = 0;
 
 
     spawnPiece(pieceName,pieceState);
     showField();
 
-    while(1){
+    while(i < 200){
       move(pieceName, pieceState, directionP);
+      printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
       showField();
-      if (done == 1){
-        Done();
+      if (done == 1 && y_ == 1){
         break;
       }
+      else if (done == 1){
+        Done();
+      }
+      i++;
     }
 
-    // down, down, right, right, down, left, left, down.
 
-    move(pieceName, pieceState, directionP); // D
-    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
-    showField();
 
-    move(pieceName, pieceState, directionP);// D
-    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
-    showField();
 
-    pieceDirection = 1;
-    move(pieceName, pieceState, directionP); // R
-    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
-    showField();
-
-    move(pieceName, pieceState, directionP); // R
-    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
-    showField();
-
-    pieceDirection = 0;
-    move(pieceName, pieceState, directionP); // D
-    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
-    showField();
-
-    pieceDirection = 2;
-    move(pieceName, pieceState, directionP); // L
-    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
-    showField();
-
-    move(pieceName, pieceState, directionP); // L
-    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
-    showField();
-    
-    pieceDirection = 0;
-    move(pieceName, pieceState, directionP); // D
-    printf("x=%i, y=%i, piece: %c, direction: %i, done %i, res %i, quit %i\n",x_,y_, pieceName, (*directionP), done, r, quit);
-    showField();
 
 
 

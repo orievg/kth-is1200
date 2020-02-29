@@ -18,14 +18,19 @@
 void *stdout;
 int rot = 0;//rotation of an object
 int position = 0;
-int x_ = 0;
+int x_ = 5;
 int y_ = 0; //-1 form desired row
 int drop = 0;
-int pieceState = 1;
-char pieceName = 'i';
+int pieceState = 0;
+int* PState = &pieceState;
+char pieceName;
+char* PName = &pieceName;
 int pieceDirection = 0;
 int quit = 11;
-
+char pieceOnHold = ' ';
+char * onHoldP = &pieceOnHold;
+char nextPiece;
+char* Pnext = &nextPiece;
 //
 int done = 0;
 //define field size
@@ -252,6 +257,7 @@ void Done(){
     pieceState=0;
     pieceDirection = 0;
     pieceName= randomPiece();
+    nextPiece = randomPiece();
     spawnPiece(pieceName,pieceState);
 
 }
@@ -905,4 +911,9 @@ void rowCheck(){
         }
         sum=0;
     }
+}
+void exchangePieces(char * piece1, char * piece2){
+    char temp = (*piece1);
+    (*piece1) = (*piece2);
+    (*piece2) = temp;
 }
