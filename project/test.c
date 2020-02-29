@@ -32,6 +32,7 @@ char * onHoldP = &pieceOnHold;
 char nextPiece;
 char* Pnext = &nextPiece;
 int score = 0;
+int rnd;
 //
 int done = 0;
 //define field size
@@ -47,7 +48,7 @@ int s_[][SMALL_PIECE_SIZE]={{0,1,1,1,1,0,0,0,0},{0,1,0,0,1,1,0,0,1},{0,0,0,0,1,1
 int t_[][SMALL_PIECE_SIZE]={{0,1,0,1,1,1,0,0,0},{0,1,0,0,1,1,0,1,0},{0,0,0,1,1,1,0,1,0},{0,1,0,1,1,0,0,1,0}};
 int z_[][SMALL_PIECE_SIZE]={{1,1,0,0,1,1,0,0,0},{0,0,1,0,1,1,0,1,0},{0,0,0,1,1,0,0,1,1},{0,1,0,1,1,0,1,0,0}};
 int r;
-int *rnd;
+
 
 //r==1 - clockwise r==2 counterclockwise
 
@@ -56,7 +57,7 @@ char randomPiece(){
   //  int rnd;
   //  rnd = (int*)malloc(sizeof(int));
   //  rnd = ((int)r%7);
-    //srand(abs(rnd));
+  //  srand(rnd);
     r = rand() % 7; // fix this. to make it truly random.
 
     switch(r){

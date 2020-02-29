@@ -613,6 +613,7 @@ int drawMenu(){
   	}
 
     if (btns == 1){
+      rnd = TMR2;
       return out;
       break;
     }
