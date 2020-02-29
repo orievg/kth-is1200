@@ -159,6 +159,7 @@ char score_array[4][5] = {{},
                           {}};
 char temp[5];
 int max1 = 0, max2 = 0, max3 = 0, max4 = 0;
+int timeout= 0;
 static const uint8_t const font[] = {
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
@@ -497,7 +498,7 @@ void FieldToDisplay(){
 
     for (i = 0; i < 10; i++){
       if (field[(i + z*10)] == 1){
-        drawBlock((i * 2) + 2, (z*2 + 4));
+        drawBlock((i * 2) + 8, (z*2 + 4));
       }
     }
 }
@@ -531,6 +532,27 @@ else if (nextPiece == 't'){
   drawT(12, 60);
 }
 
+if (pieceOnHold == 'i'){
+drawI(12, 67);
+}
+else if (pieceOnHold == 'o'){
+drawO(12, 67);
+}
+else if (pieceOnHold == 'j'){
+drawJ(12, 67);
+}
+else if (pieceOnHold == 'l'){
+drawL(12, 67);
+}
+else if (pieceOnHold == 's'){
+drawS(12, 67);
+}
+else if (pieceOnHold == 'z'){
+drawZ(12, 67);
+}
+else if (pieceOnHold == 't'){
+drawT(12, 67);
+}
 }
 void display_string() {
   char score_char[9];
@@ -685,11 +707,16 @@ int main() {
   Timer2init();
 
   while(1){
+    int btns = getBtns();
+    int btn1 = getBTN1();
     if (IFS(0) & 0x100){
       IFSCLR(0) = 0x100;
-
-      int btns = getBtns();
-      int btn1 = getBTN1();
+      timeout++;
+}
+      if (timeout == 5){
+      timeout = 0;
+    //  int btns = getBtns();
+    //  int btn1 = getBTN1();
       // delay(1000000);
 
       if (btns == 4){ // right

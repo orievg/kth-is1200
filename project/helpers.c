@@ -7,7 +7,7 @@
 
 void Timer2init(){
   T2CON = 0x70; // sets the timer to off and prescale to 1:256
-  PR2 = (80000000 / 256) ; // timeout every 100ms
+  PR2 = (80000000 / 256)/10 ; // timeout every 100ms
   TMR2 = 0; // reset the timer
   T2CONSET = 0x8000; // start the timer
 }
