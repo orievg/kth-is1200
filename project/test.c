@@ -31,6 +31,7 @@ char pieceOnHold = ' ';
 char * onHoldP = &pieceOnHold;
 char nextPiece;
 char* Pnext = &nextPiece;
+int score = 0;
 //
 int done = 0;
 //define field size
@@ -252,6 +253,7 @@ void rotate(int r, char piece, int * state){
 }
 void Done(){
     done = 0;
+    score = score + 1;
     x_=5;
     y_=0;
     pieceState=0;
@@ -906,6 +908,7 @@ void rowCheck(){
             sum+=field[i*10+j];
         }
         if (sum==10) {
+            score = score + 10;
             clearRow(i+1);
 
         }
