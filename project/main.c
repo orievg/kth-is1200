@@ -153,6 +153,12 @@ uint8_t  icon[] = { // border. other functions alter this.
   0, 0, 0, 0, 0, 0, 0, 0,
 };
 char textbuffer[2][9] = {{'G', 'A', 'M', 'E', ' ', 'O', 'V', 'E', 'R'},{}};
+char score_array[4][5] = {{},
+                          {},
+                          {},
+                          {}};
+char temp[5];
+int max1 = 0, max2 = 0, max3 = 0, max4 = 0;
 static const uint8_t const font[] = {
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
@@ -484,7 +490,7 @@ void drawBlock(int x, int y){
 
 void FieldToDisplay(){
   // Dalvie
-  int x, y;
+  // int x, y;
   int i, z;
 
   for (z = 0; z < 21; z++){
@@ -590,7 +596,8 @@ int drawMenu(){
   		}
   	}
 
-    if (btns == 2){
+    if (btns == 2){ // highscore
+      out = 1;
     for(i = 0; i < 2; i++) { //copied from lab.
   		DISPLAY_COMMAND_DATA_PORT &= ~DISPLAY_COMMAND_DATA_MASK;
   		spi_send_recv(0x22);
@@ -632,9 +639,46 @@ int main() {
 	spi_init();
 	display_wakeup();
   Buttoninit();
-  menu_out = drawMenu();
+  while(1){
+
+  menu_out = drawMenu(); // display menu screen
+  if (menu_out == 1){ // highscore screen.
+
+    while (1){
+      int i, j, k, c;
+      for(i = 0; i < 4; i++) { //copied from lab.
+    		DISPLAY_COMMAND_DATA_PORT &= ~DISPLAY_COMMAND_DATA_MASK;
+    		spi_send_recv(0x22);
+    		spi_send_recv(i);
+
+    		spi_send_recv(0x0);
+    		spi_send_recv(0x10);
+
+    		DISPLAY_COMMAND_DATA_PORT |= DISPLAY_COMMAND_DATA_MASK;
+
+    		for(j = 0; j < 5; j++) {
+    			c = score_array[i][j];
+    			if(c & 0x80)
+    				continue;
+
+    			for(k = 0; k < 8; k++)
+    				spi_send_recv(font[c*8 + k]);
+    		}
+    	}
+      int btns = getBtns();
+      if (btns == 1 || btns == 2 || btns == 4){ //return to menu screen.
+        break;
+      }
+    }
+  }
+  if (menu_out == 0){ // start game.
   pieceName = randomPiece();
   nextPiece = randomPiece();
+  ClearScreen();
+
+  for (i=0; i<210; i++){
+    field[i] = 0; // for game reset
+  }
   spawnPiece(pieceName, pieceState);
   FieldToDisplay();
 
@@ -688,17 +732,53 @@ int main() {
       //FieldToDisplay();
         }
     }
-    else {
+    else { // default downward movement
       move(pieceName, pieceState, directionPoint);
       //ClearScreen();
       //FieldToDisplay();
     }
-    ClearScreen();
+    ClearScreen(); // update the screen.
     FieldToDisplay();
       if (done == 1 && (y_ == 1 || y_ == 0)) // gameOver.
         {
         ClearScreen();
         renderScreen(icon);
+        done = 0;
+        if (max1 < score){ // update highscores.
+          max4 = max3;
+          max3 = max2;
+          max2 = max1;
+          max1 = score;
+          sprintf(temp, "1.%i", score);
+          for(i = 0; i < 5; i++){
+          score_array[0][i] = temp[i];
+        }
+        }
+        else if (max2 < score){
+          max4 = max3;
+          max3 = max2;
+          max2 = score;
+          sprintf(temp, "2.%i", max2);
+          for(i = 0; i < 5; i++){
+          score_array[1][i] = temp[i];
+        }
+        }
+        else if (max3 < score){
+          max4 = max3;
+          max3 = score;
+          sprintf(temp, "3.%i", max3);
+          for(i = 0; i < 5; i++){
+          score_array[2][i] = temp[i];
+        }
+        }
+        else if (max4 < score){
+          max4 = score;
+          sprintf(temp, "4.%i", max4);
+          for(i = 0; i < 5; i++){
+          score_array[3][i] = temp[i];
+        }
+        }
+
         display_string();
         break;
       }
@@ -709,6 +789,7 @@ int main() {
       }
     }
   }
-
+}
+}
 	return 0;
 }
